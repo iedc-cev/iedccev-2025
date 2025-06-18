@@ -107,8 +107,8 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
 
   if (emailSent) {
     return (
-      <div className="fixed top-16 left-0 right-0 bottom-0 bg-black/50 flex items-center justify-center z-40 p-4">
-        <Card className="w-full max-w-md">
+        <div>
+        <Card className="absolute top-40 left-[13%] w-full max-w-sm shadow-2xl sm:left-[40%]">
           <CardHeader className="flex flex-row items-center justify-between pb-4">
             <CardTitle className="text-xl">Registration Complete!</CardTitle>
             <Button variant="ghost" size="icon" onClick={onClose}>
@@ -136,8 +136,8 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
   }
 
   return (
-    <div className="fixed top-16 left-0 right-0 bottom-0 bg-black/50 flex items-center justify-center z-40 p-4">
-      <Card className="w-full max-w-2xl max-h-[calc(100vh-8rem)] overflow-y-auto">
+    <div>
+      <Card className="absolute top-20 left-[5%] w-full max-w-lg shadow-2xl max-h-90vh  overflow-y-hidden sm:left-[35%] max-w-md">
         <CardHeader className="flex flex-row items-center justify-between pb-4">
           <CardTitle className="text-xl">Join IEDC CEV</CardTitle>
           <Button variant="ghost" size="icon" onClick={onClose}>

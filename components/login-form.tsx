@@ -69,8 +69,8 @@ export default function LoginForm({ onClose, onSwitchToRegister }: LoginFormProp
 
   if (emailSent) {
     return (
-      <div className="fixed top-16 left-0 right-0 bottom-0 bg-black/50 flex items-center justify-center z-40 p-4">
-        <Card className="w-full max-w-md">
+      <div>
+          <Card className="absolute top-20 left-[13%] w-full max-w-sm shadow-2xl sm:left-[40%]">
           <CardHeader className="flex flex-row items-center justify-between pb-4">
             <CardTitle className="text-xl">Check Your Email</CardTitle>
             <Button variant="ghost" size="icon" onClick={onClose}>
@@ -97,8 +97,8 @@ export default function LoginForm({ onClose, onSwitchToRegister }: LoginFormProp
   }
 
   return (
-    <div className="fixed top-16 left-0 right-0 bottom-0 bg-black/50 flex items-center justify-center z-40 p-4">
-      <Card className="w-full max-w-md">
+    <div>
+      <Card className="absolute top-20 left-[13%] w-full max-w-sm shadow-2xl sm:left-[40%]">
         <CardHeader className="flex flex-row items-center justify-between pb-4">
           <CardTitle className="text-xl">Sign In to IEDC CEV</CardTitle>
           <Button variant="ghost" size="icon" onClick={onClose}>
