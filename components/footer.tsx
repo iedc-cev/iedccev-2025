@@ -12,7 +12,7 @@ export default function Footer() {
               <div className="w-10 h-10 bg-[#1A4C96] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">IE</span>
               </div>
-              <span className="font-bold text-xl">IEDC CEV</span>
+              <span className="font-bold text-xl">IEDC CEv</span>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
               Innovation and Entrepreneurship Development Cell at College of Engineering Vadakara. Where ideas meet
