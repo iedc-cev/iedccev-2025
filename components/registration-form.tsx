@@ -108,7 +108,7 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
   if (emailSent) {
     return (
         <div>
-        <Card className="absolute top-40 left-[13%] w-full max-w-sm shadow-2xl sm:left-[40%]">
+        <Card className="absolute top-20 left-[5%] w-full max-w-lg shadow-2xl max-h-90vh  overflow-y-hidden sm:left-[35%] max-w-md">
           <CardHeader className="flex flex-row items-center justify-between pb-4">
             <CardTitle className="text-xl">Registration Complete!</CardTitle>
             <Button variant="ghost" size="icon" onClick={onClose}>
