@@ -1,80 +1,100 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, MapPin, Users, Lightbulb, Wrench, Camera, Zap, ArrowRight, Play } from "lucide-react"
+import { Calendar, MapPin, Lightbulb, Wrench, Camera, Zap, ArrowRight, Play } from "lucide-react"
 import AnimatedBackground from "@/components/animated-background"
-import { supabase, type Event, type TeamMember, type MediaItem } from "@/lib/supabase"
-// Add the useAuth import at the top
-import { useAuth } from "@/contexts/auth-context"
+
+// Static data for demo purposes
+const staticEvents = [
+  {
+    id: "1",
+    title: "Tech Talk 2024",
+    description: "An inspiring session on emerging technologies and their impact on society.",
+    date: "2024-07-15",
+    time: "2:00 PM",
+    venue: "Main Auditorium",
+    poster_url: "/placeholder.svg?height=200&width=400",
+    is_live: true,
+  },
+  {
+    id: "2",
+    title: "Startup Pitch Competition",
+    description: "Students present their innovative startup ideas to industry experts.",
+    date: "2024-07-20",
+    time: "10:00 AM",
+    venue: "Innovation Lab",
+    poster_url: "/placeholder.svg?height=200&width=400",
+    is_live: true,
+  },
+  {
+    id: "3",
+    title: "Workshop: AI & ML Basics",
+    description: "Hands-on workshop covering fundamentals of Artificial Intelligence and Machine Learning.",
+    date: "2024-06-10",
+    time: "9:00 AM",
+    venue: "Computer Lab",
+    poster_url: "/placeholder.svg?height=200&width=400",
+    is_live: false,
+  },
+]
+
+const staticTeamMembers = [
+  {
+    id: "1",
+    name: "Arjun Krishnan",
+    position: "Chief Executive Officer",
+    photo_url: "/placeholder.svg?height=96&width=96",
+  },
+  {
+    id: "2",
+    name: "Priya Nair",
+    position: "Chief Technology Officer",
+    photo_url: "/placeholder.svg?height=96&width=96",
+  },
+  {
+    id: "3",
+    name: "Rahul Menon",
+    position: "Head of Events",
+    photo_url: "/placeholder.svg?height=96&width=96",
+  },
+  {
+    id: "4",
+    name: "Sneha Pillai",
+    position: "Media Head",
+    photo_url: "/placeholder.svg?height=96&width=96",
+  },
+]
 
 export default function HomePage() {
-  const [events, setEvents] = useState<Event[]>([])
-  const [teamMembers, setTeamMembers] = useState<TeamMember[]>([])
-  const [mediaItems, setMediaItems] = useState<MediaItem[]>([])
-
-  // Add this after the existing useState hooks
-  const { user, userProfile } = useAuth()
-
-  useEffect(() => {
-    fetchEvents()
-    fetchTeamMembers()
-    fetchMediaItems()
-  }, [])
-
-  const fetchEvents = async () => {
-    const { data } = await supabase.from("events").select("*").order("date", { ascending: false }).limit(3)
-
-    if (data) setEvents(data)
-  }
-
-  const fetchTeamMembers = async () => {
-    const { data } = await supabase.from("team_members").select("*").limit(6)
-
-    if (data) setTeamMembers(data)
-  }
-
-  const fetchMediaItems = async () => {
-    const { data } = await supabase.from("media_items").select("*").limit(3)
-
-    if (data) setMediaItems(data)
-  }
+  const [events] = useState(staticEvents)
+  const [teamMembers] = useState(staticTeamMembers)
 
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden -z-10">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <AnimatedBackground />
-        <div className="relative text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
             Create. <span className="text-[#1A4C96]">Innovate.</span> <span className="text-gray-700">Explore.</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Where ideas meet execution. Join the innovation revolution at IEDC CE Vadakara.
           </p>
-          {/* Replace the CTA buttons in the hero section with: */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {user ? (
-              <Button size="lg" className="bg-[#1A4C96] hover:bg-[#1A4C96]/90 text-lg px-8 py-3" asChild>
-                <Link href="/profile">
-                  Go to Profile
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            ) : (
-              <Button size="lg" className="bg-[#1A4C96] hover:bg-[#1A4C96]/90 text-lg px-8 py-3">
-                Join IEDC
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            )}
+            <Button size="lg" className="bg-[#1A4C96] hover:bg-[#1A4C96]/90 text-lg px-8 py-3">
+              Join IEDC
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
             <Button
               size="lg"
               variant="outline"
-              className="text-lg px-8 py-3 border-[#1A4C96] text-[#1A4C96] hover:bg-[#1A4C96] hover:text-white"
+              className="text-lg px-8 py-3 border-[#1A4C96] text-[#1A4C96] hover:bg-[#1A4C96] hover:text-white bg-transparent"
             >
               Register for Event
             </Button>
@@ -160,54 +180,28 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {events.length > 0
-              ? events.map((event) => (
-                  <Card key={event.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                    <div className="aspect-video relative">
-                      <Image
-                        src={event.poster_url || "/placeholder.svg?height=200&width=400"}
-                        alt={event.title}
-                        fill
-                        className="object-cover"
-                      />
-                      {event.is_live && <Badge className="absolute top-4 left-4 bg-green-500">Live</Badge>}
-                    </div>
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
-                      <div className="flex items-center text-gray-600 mb-2">
-                        <Calendar className="h-4 w-4 mr-2" />
-                        <span>{new Date(event.date).toLocaleDateString()}</span>
-                      </div>
-                      <div className="flex items-center text-gray-600 mb-4">
-                        <MapPin className="h-4 w-4 mr-2" />
-                        <span>{event.venue}</span>
-                      </div>
-                      <Button className="w-full bg-[#1A4C96] hover:bg-[#1A4C96]/90">
-                        {event.is_live ? "Register Now" : "View Details"}
-                      </Button>
-                    </CardContent>
-                  </Card>
-                ))
-              : // Placeholder cards when no events
-                Array.from({ length: 3 }).map((_, i) => (
-                  <Card key={i} className="overflow-hidden">
-                    <div className="aspect-video bg-gray-200 flex items-center justify-center">
-                      <span className="text-gray-500">Event Poster</span>
-                    </div>
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-semibold mb-2">Upcoming Event</h3>
-                      <div className="flex items-center text-gray-600 mb-2">
-                        <Calendar className="h-4 w-4 mr-2" />
-                        <span>Coming Soon</span>
-                      </div>
-                      <div className="flex items-center text-gray-600 mb-4">
-                        <MapPin className="h-4 w-4 mr-2" />
-                        <span>CE Vadakara</span>
-                      </div>
-                      <Button className="w-full bg-[#1A4C96] hover:bg-[#1A4C96]/90">Stay Tuned</Button>
-                    </CardContent>
-                  </Card>
-                ))}
+            {events.map((event) => (
+              <Card key={event.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="aspect-video relative">
+                  <Image src={event.poster_url || "/placeholder.svg"} alt={event.title} fill className="object-cover" />
+                  {event.is_live && <Badge className="absolute top-4 left-4 bg-green-500">Live</Badge>}
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
+                  <div className="flex items-center text-gray-600 mb-2">
+                    <Calendar className="h-4 w-4 mr-2" />
+                    <span>{new Date(event.date).toLocaleDateString()}</span>
+                  </div>
+                  <div className="flex items-center text-gray-600 mb-4">
+                    <MapPin className="h-4 w-4 mr-2" />
+                    <span>{event.venue}</span>
+                  </div>
+                  <Button className="w-full bg-[#1A4C96] hover:bg-[#1A4C96]/90">
+                    {event.is_live ? "Register Now" : "View Details"}
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -232,7 +226,7 @@ export default function HomePage() {
               </div>
               <CardContent className="p-6">
                 <p className="text-gray-600 mb-4">Conversations with innovators and entrepreneurs</p>
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full bg-transparent">
                   Watch Episodes
                 </Button>
               </CardContent>
@@ -249,7 +243,7 @@ export default function HomePage() {
               </div>
               <CardContent className="p-6">
                 <p className="text-gray-600 mb-4">Casual conversations and campus stories</p>
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full bg-transparent">
                   Watch Series
                 </Button>
               </CardContent>
@@ -266,7 +260,7 @@ export default function HomePage() {
               </div>
               <CardContent className="p-6">
                 <p className="text-gray-600 mb-4">Technology insights and digital trends</p>
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full bg-transparent">
                   Explore Tech
                 </Button>
               </CardContent>
@@ -294,60 +288,31 @@ export default function HomePage() {
 
           <div className="overflow-x-auto">
             <div className="flex space-x-6 pb-4">
-              {teamMembers.length > 0
-                ? teamMembers.map((member) => (
-                    <Card key={member.id} className="flex-shrink-0 w-64 text-center hover:shadow-lg transition-shadow">
-                      <CardContent className="p-6">
-                        <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4">
-                          <Image
-                            src={member.photo_url || "/placeholder.svg?height=96&width=96"}
-                            alt={member.name}
-                            width={96}
-                            height={96}
-                            className="object-cover w-full h-full"
-                          />
-                        </div>
-                        <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
-                        <p className="text-gray-600 mb-4">{member.position}</p>
-                        <div className="flex justify-center space-x-2">
-                          {member.instagram && (
-                            <Button size="sm" variant="outline" asChild>
-                              <a href={member.instagram} target="_blank" rel="noopener noreferrer">
-                                IG
-                              </a>
-                            </Button>
-                          )}
-                          {member.linkedin && (
-                            <Button size="sm" variant="outline" asChild>
-                              <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                                LI
-                              </a>
-                            </Button>
-                          )}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))
-                : // Placeholder team members
-                  Array.from({ length: 4 }).map((_, i) => (
-                    <Card key={i} className="flex-shrink-0 w-64 text-center">
-                      <CardContent className="p-6">
-                        <div className="w-24 h-24 rounded-full bg-gray-200 mx-auto mb-4 flex items-center justify-center">
-                          <Users className="h-8 w-8 text-gray-400" />
-                        </div>
-                        <h3 className="text-lg font-semibold mb-1">Team Member</h3>
-                        <p className="text-gray-600 mb-4">Position</p>
-                        <div className="flex justify-center space-x-2">
-                          <Button size="sm" variant="outline">
-                            IG
-                          </Button>
-                          <Button size="sm" variant="outline">
-                            LI
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
+              {teamMembers.map((member) => (
+                <Card key={member.id} className="flex-shrink-0 w-64 text-center hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4">
+                      <Image
+                        src={member.photo_url || "/placeholder.svg"}
+                        alt={member.name}
+                        width={96}
+                        height={96}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
+                    <p className="text-gray-600 mb-4">{member.position}</p>
+                    <div className="flex justify-center space-x-2">
+                      <Button size="sm" variant="outline">
+                        IG
+                      </Button>
+                      <Button size="sm" variant="outline">
+                        LI
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>

@@ -1,26 +1,46 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Play, Clock, ExternalLink } from "lucide-react"
-import { supabase, type MediaItem } from "@/lib/supabase"
+
+// Static data for demo purposes
+const staticMediaItems = [
+  {
+    id: "1",
+    title: "Innovation in Kerala Startups",
+    description: "Exploring the startup ecosystem in Kerala and opportunities for students.",
+    thumbnail_url: "/placeholder.svg?height=200&width=400",
+    video_url: "https://youtube.com/watch?v=sample1",
+    series: "PodShow",
+    duration: "45:30",
+  },
+  {
+    id: "2",
+    title: "Campus Life Chronicles",
+    description: "A fun take on daily life at CE Vadakara and student experiences.",
+    thumbnail_url: "/placeholder.svg?height=200&width=400",
+    video_url: "https://youtube.com/watch?v=sample2",
+    series: "Kadha Para Chill",
+    duration: "25:15",
+  },
+  {
+    id: "3",
+    title: "Latest Tech Trends 2024",
+    description: "Deep dive into emerging technologies and their applications.",
+    thumbnail_url: "/placeholder.svg?height=200&width=400",
+    video_url: "https://youtube.com/watch?v=sample3",
+    series: "Technalogya",
+    duration: "35:45",
+  },
+]
 
 export default function MediaPage() {
-  const [mediaItems, setMediaItems] = useState<MediaItem[]>([])
+  const [mediaItems] = useState(staticMediaItems)
   const [selectedSeries, setSelectedSeries] = useState<string>("all")
-
-  useEffect(() => {
-    fetchMediaItems()
-  }, [])
-
-  const fetchMediaItems = async () => {
-    const { data } = await supabase.from("media_items").select("*").order("created_at", { ascending: false })
-
-    if (data) setMediaItems(data)
-  }
 
   const filteredItems =
     selectedSeries === "all" ? mediaItems : mediaItems.filter((item) => item.series === selectedSeries)
@@ -71,7 +91,7 @@ export default function MediaPage() {
                 <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow group">
                   <div className="aspect-video relative">
                     <Image
-                      src={item.thumbnail_url || "/placeholder.svg?height=200&width=400"}
+                      src={item.thumbnail_url || "/placeholder.svg"}
                       alt={item.title}
                       fill
                       className="object-cover"
@@ -95,7 +115,7 @@ export default function MediaPage() {
                   <CardContent className="p-6">
                     <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                     <p className="text-gray-600 mb-4 line-clamp-2">{item.description}</p>
-                    <Button variant="outline" className="w-full" asChild>
+                    <Button variant="outline" className="w-full bg-transparent" asChild>
                       <a href={item.video_url} target="_blank" rel="noopener noreferrer">
                         Watch Full Video
                         <ExternalLink className="ml-2 h-4 w-4" />
@@ -137,7 +157,7 @@ export default function MediaPage() {
                   Deep conversations with innovators, entrepreneurs, and thought leaders. Exploring ideas that shape the
                   future.
                 </p>
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full bg-transparent">
                   Watch All Episodes
                 </Button>
               </CardContent>
@@ -157,7 +177,7 @@ export default function MediaPage() {
                   Casual conversations and campus stories. A relaxed take on student life, innovation, and everything in
                   between.
                 </p>
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full bg-transparent">
                   Watch Series
                 </Button>
               </CardContent>
@@ -176,7 +196,7 @@ export default function MediaPage() {
                 <p className="text-gray-600 mb-4">
                   Technology insights, digital trends, and the latest in tech innovation. Staying ahead of the curve.
                 </p>
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full bg-transparent">
                   Explore Tech Content
                 </Button>
               </CardContent>

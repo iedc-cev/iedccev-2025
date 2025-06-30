@@ -5,19 +5,11 @@ import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-import LoginForm from "./login-form"
-import RegistrationForm from "./registration-form"
-import { useAuth } from "@/contexts/auth-context"
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
-  const [showLogin, setShowLogin] = useState(false)
-  const [showRegister, setShowRegister] = useState(false)
-  const { user, userProfile, signOut } = useAuth()
-
   return (
-    <nav className="w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -42,25 +34,7 @@ export default function Navbar() {
             <Link href="/media" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
               Media
             </Link>
-            {user ? (
-              <div className="flex items-center space-x-4">
-                <Link href="/profile" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
-                  Profile
-                </Link>
-                <Button variant="outline" onClick={signOut}>
-                  Sign Out
-                </Button>
-              </div>
-            ) : (
-              <div className="flex items-center space-x-2">
-                <Button variant="outline" onClick={() => setShowLogin(true)}>
-                  Sign In
-                </Button>
-                <Button className="bg-[#1A4C96] hover:bg-[#1A4C96]/90" onClick={() => setShowRegister(true)}>
-                  Join IEDC
-                </Button>
-              </div>
-            )}
+            <Button className="bg-[#1A4C96] hover:bg-[#1A4C96]/90">Join IEDC</Button>
           </div>
 
           {/* Mobile menu button */}
@@ -104,41 +78,12 @@ export default function Navbar() {
                 Media
               </Link>
               <div className="px-3 py-2">
-                {user ? (
-                  <div className="flex items-center space-x-4">
-                    <Link href="/profile" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
-                      Profile
-                    </Link>
-                    <Button variant="outline" onClick={signOut}>
-                      Sign Out
-                    </Button>
-                  </div>
-                ) : (
-                  <div className="flex items-center space-x-2">
-                    <Button variant="outline" onClick={() => setShowLogin(true)}>
-                      Sign In
-                    </Button>
-                    <Button className="w-full bg-[#1A4C96] hover:bg-[#1A4C96]/90" onClick={() => setShowRegister(true)}>
-                      Join IEDC
-                    </Button>
-                  </div>
-                )}
+                <Button className="w-full bg-[#1A4C96] hover:bg-[#1A4C96]/90">Join IEDC</Button>
               </div>
             </div>
           </div>
         )}
       </div>
-      {showLogin && (
-        <LoginForm
-          onClose={() => setShowLogin(false)}
-          onSwitchToRegister={() => {
-            setShowLogin(false)
-            setShowRegister(true)
-          }}
-        />
-      )}
-
-      {showRegister && <RegistrationForm onClose={() => setShowRegister(false)} />}
     </nav>
   )
 }

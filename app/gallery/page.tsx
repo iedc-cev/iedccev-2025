@@ -1,27 +1,56 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { X } from "lucide-react"
-import { supabase, type GalleryImage } from "@/lib/supabase"
+
+// Static data for demo purposes
+const staticImages = [
+  {
+    id: "1",
+    title: "Tech Talk Opening",
+    image_url: "/placeholder.svg?height=400&width=600",
+    event_name: "Tech Talk 2024",
+  },
+  {
+    id: "2",
+    title: "Startup Presentations",
+    image_url: "/placeholder.svg?height=400&width=600",
+    event_name: "Startup Pitch Competition",
+  },
+  {
+    id: "3",
+    title: "Workshop Session",
+    image_url: "/placeholder.svg?height=400&width=600",
+    event_name: "AI & ML Workshop",
+  },
+  {
+    id: "4",
+    title: "Team Building Activity",
+    image_url: "/placeholder.svg?height=400&width=600",
+    event_name: "Town Vibes",
+  },
+  {
+    id: "5",
+    title: "Innovation Lab Tour",
+    image_url: "/placeholder.svg?height=400&width=600",
+    event_name: "Campus Events",
+  },
+  {
+    id: "6",
+    title: "Student Networking",
+    image_url: "/placeholder.svg?height=400&width=600",
+    event_name: "Town Vibes",
+  },
+]
 
 export default function GalleryPage() {
-  const [images, setImages] = useState<GalleryImage[]>([])
-  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
+  const [images] = useState(staticImages)
+  const [selectedImage, setSelectedImage] = useState<(typeof staticImages)[0] | null>(null)
   const [filter, setFilter] = useState<string>("all")
-
-  useEffect(() => {
-    fetchImages()
-  }, [])
-
-  const fetchImages = async () => {
-    const { data } = await supabase.from("gallery_images").select("*").order("created_at", { ascending: false })
-
-    if (data) setImages(data)
-  }
 
   const filteredImages =
     filter === "all" ? images : images.filter((img) => img.event_name?.toLowerCase().includes(filter.toLowerCase()))
@@ -78,7 +107,7 @@ export default function GalleryPage() {
                 >
                   <div className="relative">
                     <Image
-                      src={image.image_url || "/placeholder.svg?height=300&width=400"}
+                      src={image.image_url || "/placeholder.svg"}
                       alt={image.title}
                       width={400}
                       height={300}
@@ -125,7 +154,7 @@ export default function GalleryPage() {
               <X className="h-6 w-6" />
             </Button>
             <Image
-              src={selectedImage.image_url || "/placeholder.svg?height=600&width=800"}
+              src={selectedImage.image_url || "/placeholder.svg"}
               alt={selectedImage.title}
               width={800}
               height={600}

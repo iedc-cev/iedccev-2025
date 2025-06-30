@@ -1,31 +1,55 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import Link from "next/link"
+
+import { useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, MapPin, Clock, ExternalLink } from "lucide-react"
-import { supabase, type Event } from "@/lib/supabase"
+
+// Static data for demo purposes
+const staticEvents = [
+  {
+    id: "1",
+    title: "Tech Talk 2024",
+    description: "An inspiring session on emerging technologies and their impact on society.",
+    date: "2024-07-15",
+    time: "2:00 PM",
+    venue: "Main Auditorium",
+    poster_url: "/placeholder.svg?height=200&width=400",
+    is_live: true,
+    registration_link: "https://forms.google.com/tech-talk-2024",
+  },
+  {
+    id: "2",
+    title: "Startup Pitch Competition",
+    description: "Students present their innovative startup ideas to industry experts.",
+    date: "2024-07-20",
+    time: "10:00 AM",
+    venue: "Innovation Lab",
+    poster_url: "/placeholder.svg?height=200&width=400",
+    is_live: true,
+    registration_link: "https://forms.google.com/startup-pitch",
+  },
+  {
+    id: "3",
+    title: "Workshop: AI & ML Basics",
+    description: "Hands-on workshop covering fundamentals of Artificial Intelligence and Machine Learning.",
+    date: "2024-06-10",
+    time: "9:00 AM",
+    venue: "Computer Lab",
+    poster_url: "/placeholder.svg?height=200&width=400",
+    is_live: false,
+    aftermovie_link: "https://youtube.com/watch?v=sample",
+  },
+]
 
 export default function EventsPage() {
-  const [liveEvents, setLiveEvents] = useState<Event[]>([])
-  const [pastEvents, setPastEvents] = useState<Event[]>([])
-
-  useEffect(() => {
-    fetchEvents()
-  }, [])
-
-  const fetchEvents = async () => {
-    const { data } = await supabase.from("events").select("*").order("date", { ascending: false })
-
-    if (data) {
-      const live = data.filter((event) => event.is_live)
-      const past = data.filter((event) => !event.is_live)
-      setLiveEvents(live)
-      setPastEvents(past)
-    }
-  }
+  const [events] = useState(staticEvents)
+  const liveEvents = events.filter((event) => event.is_live)
+  const pastEvents = events.filter((event) => !event.is_live)
 
   return (
     <div className="pt-16">
@@ -52,7 +76,7 @@ export default function EventsPage() {
                 <Card key={event.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="aspect-video relative">
                     <Image
-                      src={event.poster_url || "/placeholder.svg?height=200&width=400"}
+                      src={event.poster_url || "/placeholder.svg"}
                       alt={event.title}
                       fill
                       className="object-cover"
@@ -111,7 +135,7 @@ export default function EventsPage() {
                 <Card key={event.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="aspect-video relative">
                     <Image
-                      src={event.poster_url || "/placeholder.svg?height=200&width=400"}
+                      src={event.poster_url || "/placeholder.svg"}
                       alt={event.title}
                       fill
                       className="object-cover"
@@ -126,14 +150,14 @@ export default function EventsPage() {
                     </div>
 
                     {event.aftermovie_link ? (
-                      <Button variant="outline" className="w-full" asChild>
+                      <Button variant="outline" className="w-full bg-transparent" asChild>
                         <a href={event.aftermovie_link} target="_blank" rel="noopener noreferrer">
                           Watch Aftermovie
                           <ExternalLink className="ml-2 h-4 w-4" />
                         </a>
                       </Button>
                     ) : (
-                      <Button variant="outline" className="w-full" disabled>
+                      <Button variant="outline" className="w-full bg-transparent" disabled>
                         Aftermovie Coming Soon
                       </Button>
                     )}
@@ -180,7 +204,7 @@ export default function EventsPage() {
 
           <div className="text-center mt-8">
             <Button size="lg" variant="outline" asChild>
-              <a href="/gallery">View Full Gallery</a>
+              <Link href="/gallery">View Full Gallery</Link>
             </Button>
           </div>
         </div>
