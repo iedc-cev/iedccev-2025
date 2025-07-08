@@ -59,7 +59,7 @@ const EventsForm = () => {
           onSubmit={handleSubmit}
           className="w-full max-w-[650px] p-8 space-y-6"
         >
-          <h1 className="text-3xl font-bold mb-2 text-[#2a64c8]">Join IEDC</h1>
+          <h1 className="text-3xl font-bold mb-2 text-[#2a64c8]"><span className='text-gray-700'>Join</span> IEDC CEV</h1>
           <p className="text-gray-500">
             Become part of the Innovation & Entrepreneurship Development Cell and start your journey of innovation!
           </p>
