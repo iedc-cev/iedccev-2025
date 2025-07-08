@@ -8,7 +8,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, MapPin, Lightbulb, Wrench, Camera, Zap, ArrowRight, Play } from "lucide-react"
 import AnimatedBackground from "@/components/animated-background"
-
 // Static data for demo purposes
 const staticEvents = [
   {
@@ -87,23 +86,22 @@ export default function HomePage() {
             Where ideas meet execution. Join the innovation revolution at IEDC CE Vadakara.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#1A4C96] hover:bg-[#1A4C96]/90 text-lg px-8 py-3">
+            <Link href='/join' className="bg-[#1A4C96] hover:bg-[#1A4C96]/90 text-lg px-4 py-3 text-white rounded-xl flex items-center justify-center hover:scale-[0.96]">
               Join IEDC
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-lg px-8 py-3 border-[#1A4C96] text-[#1A4C96] hover:bg-[#1A4C96] hover:text-white bg-transparent"
+              <ArrowRight className="ml-3" />
+            </Link>
+            <Link
+              href='#'
+              className="text-lg px-8 py-3 border-[#1A4C96] text-[#1A4C96] hover:scale-[0.96] bg-transparent border rounded-sm"
             >
               Register for Event
-            </Button>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">About IEDC CEV</h2>
@@ -164,10 +162,10 @@ export default function HomePage() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Events Preview */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-12">
             <div>
@@ -204,10 +202,10 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Featured Media */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Media</h2>
@@ -276,21 +274,21 @@ export default function HomePage() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Team Preview */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Meet the Team</h2>
+          <div className="mb-14">
+            <h2 className="text-4xl text-gray-900 mb-2">Meet the Team</h2>
             <p className="text-xl text-gray-600">The minds behind the innovation</p>
           </div>
 
           <div className="overflow-x-auto">
             <div className="flex space-x-6 pb-4">
               {teamMembers.map((member) => (
-                <Card key={member.id} className="flex-shrink-0 w-64 text-center hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
+                <div className="flex-shrink-0 w-64 text-center hover:shadow-lg transition-shadow border">
+                  <div className="p-6">
                     <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4">
                       <Image
                         src={member.photo_url || "/placeholder.svg"}
@@ -310,13 +308,13 @@ export default function HomePage() {
                         LI
                       </Button>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
         </div>
-      </section>
+      </section>  */}
     </div>
   )
 }
