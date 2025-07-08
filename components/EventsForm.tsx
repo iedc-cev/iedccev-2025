@@ -44,7 +44,7 @@ const EventsForm = () => {
       setStatus('Form submitted successfully!');
       setFormData({ name: '', email: '', department: '', mobileNo: '' });
 
-      const whatsappLink = 'https://chat.whatsapp.com';
+      const whatsappLink = 'https://chat.whatsapp.com/BPwIeWpDT1Y42Op7j1Tcul';
       router.push(whatsappLink);
     } catch (err) {
       console.error('Submission error:', err);
@@ -128,7 +128,7 @@ const EventsForm = () => {
               required
               value={formData.mobileNo}
               onChange={handleChange}
-              placeholder="1234567890"
+              placeholder="98430XXXXX"
               className="w-full p-2 rounded text-black border hover:border-[#2453a0] shadow-sm"
             />
           </div>
