@@ -74,12 +74,25 @@ const Page: React.FC = () => {
   };
 
   return (
-    <main className="relative min-h-screen w-full bg-[#0B1D32] flex items-center justify-center px-4">
+    <main className="relative min-h-screen w-full bg-[#0B1D32] flex items-center justify-center px-4 overflow-hidden">
       <form
-        className={`w-full max-w-[650px] p-8 space-y-6 mx-auto text-white ${qrCode ? 'blur-sm' : ''}`}
+        className={`w-full max-w-[650px] p-6 space-y-4 mx-auto text-white ${qrCode ? 'blur-sm' : ''}`}
       >
-        <h1 className="text-5xl font-antonio text-center mb-2">CURIOVERSE</h1>
-        <p>Step into Curioverse — a hands-on workshop where creativity meets real-world problem solving. Discover, build, and innovate with like-minded minds.</p>
+        <h1 className="text-5xl font-antonio text-center mb-6">CURIOVERSE</h1>
+        <div>
+          <p className='text-2xl'>Design strategies</p>
+        <p className='text-lg'>Appilcations of VR in communication</p>
+        </div>
+        <div>
+          <div className='border-l-8 px-2 mb-2'>
+            <p>15th July 2025</p>
+            <p>9am - 4pm</p>
+          </div>
+          <div className='border-l-8 px-2 mb-2'>
+          <p>ASAP Room,CEV</p>
+          <p>Exclusive for Civil Engg.Dept</p>
+          </div>
+        </div>
         <div>
           <label className="block mb-1 text-white">Full Name</label>
           <input
@@ -139,9 +152,7 @@ const Page: React.FC = () => {
       >
         Submit Details
       </button>
-
-
-        {status && <p className="text-sm text-white">{status}</p>}
+      {status && <p className="text-sm text-white">{status}</p>}
       </form>
 
       {qrCode && (
