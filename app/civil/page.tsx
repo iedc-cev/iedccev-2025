@@ -33,28 +33,6 @@ const Page: React.FC = () => {
     if (file) setScreenshotFile(file);
   };
 
-  const handleFormSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('Submitting details...');
-
-    try {
-      const res = await fetch('/api/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-
-      if (!res.ok) throw new Error(`Server error: ${res.status}`);
-
-      setStatus('Form submitted. Now upload payment screenshot.');
-      setQrCode(true);
-    } catch (err) {
-      console.error('Form submission error:', err);
-      setStatus('Form submission failed. Try again.');
-    }
-  };
-
   const handleFinalSubmit = async () => {
     if (!screenshotFile) {
       setStatus('Please upload a screenshot before joining.');
@@ -85,7 +63,7 @@ const Page: React.FC = () => {
         if (!res.ok) throw new Error(`Server error: ${res.status}`);
 
         setStatus('Submission successful! Redirecting...');
-        router.push('https://chat.whatsapp.com/BPwIeWpDT1Y42Op7j1Tcul');
+        router.push('https://chat.whatsapp.com/KHjnhPgrA34KDTcn5GakpX');
       } catch (err) {
         console.error('Screenshot upload error:', err);
         setStatus('Failed to upload screenshot. Try again.');
@@ -98,7 +76,6 @@ const Page: React.FC = () => {
   return (
     <main className="relative min-h-screen w-full bg-[#0B1D32] flex items-center justify-center px-4">
       <form
-        onSubmit={handleFormSubmit}
         className={`w-full max-w-[650px] p-8 space-y-6 mx-auto text-white ${qrCode ? 'blur-sm' : ''}`}
       >
         <h1 className="text-5xl font-antonio text-center mb-2">CURIOVERSE</h1>
@@ -156,11 +133,13 @@ const Page: React.FC = () => {
         </div>
 
         <button
-          type="submit"
-          className="bg-[#2451a0] text-white px-6 py-2 rounded hover:bg-[#1d8ce1]"
-        >
-          Submit Details
-        </button>
+        type="button"
+        onClick={() => setQrCode(true)}
+        className="bg-[#2451a0] text-white px-6 py-2 rounded hover:bg-[#1d8ce1]"
+      >
+        Submit Details
+      </button>
+
 
         {status && <p className="text-sm text-white">{status}</p>}
       </form>
