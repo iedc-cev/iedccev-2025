@@ -189,6 +189,7 @@ const Page: React.FC = () => {
             >
               Submit & Join WhatsApp
             </button>
+            {status && <p className="text-sm text-[#2453a0]">{status}</p>}
           </div>
         </div>
       )}
