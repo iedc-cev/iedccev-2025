@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&family=Antonio:wght@100..700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Antonio' ,Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
@@ -12,6 +12,16 @@ body {
     text-wrap: balance;
   }
 }
+@keyframes slide-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200px); /* adjust how far to scroll */
+  }
+}
+
+
 
 @layer base {
   :root {

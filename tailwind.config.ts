@@ -21,6 +21,8 @@ const config: Config = {
     extend: {
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
+        antonio: ['Antonio', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

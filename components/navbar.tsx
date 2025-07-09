@@ -5,10 +5,14 @@ import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from 'next/image'
+import { usePathname } from 'next/navigation' 
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
 
+  // Hide footer on /join
+  if (pathname === '/civil') return null
   return (
     <nav className="w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
       <div className="max-w-7xl mx-auto px-4 py-2 sm:px-6 lg:px-8">
@@ -23,7 +27,7 @@ export default function Navbar() {
             <Link href="/" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
               Home
             </Link>
-            <Link href="/" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
+            <Link href="/events" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
               Events
             </Link>
             <Link href="/" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
@@ -32,14 +36,14 @@ export default function Navbar() {
             <Link href="/" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
               Media
             </Link>
-            <Link  href='/' className="bg-[#1A4C96] hover:bg-[#1A4C96]/90 text-white rounded px-4 py-2">Join IEDC</Link>
+            <Link  href='/join' className="bg-[#1A4C96] hover:bg-[#1A4C96]/90 text-white rounded px-4 py-2">Join IEDC</Link>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)}>
+            <div className='cursor-pointer' onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
+            </div>
           </div>
         </div>
 
