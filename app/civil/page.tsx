@@ -166,8 +166,8 @@ const Page: React.FC = () => {
             <Image src="/GooglePay_QR.png" alt="QR Code" width={220} height={220} />
             <a
               href={process.env.NEXT_PUBLIC_UPI_LINK ?? '#'}
-              rel="noopener noreferrer"
               target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#1c63b4] text-white px-4 py-2 rounded hover:bg-[#238aff]"
             >
               Pay via UPI / Gpay
@@ -195,7 +195,7 @@ const Page: React.FC = () => {
                 <p className="mt-2 text-green-600 text-xs">{screenshotFile.name}</p>
               )}
             </div>
-
+            <p className='text-black text-lg'>Link:{process.env.NEXT_PUBLIC_UPI_LINK}</p>
             <button
               onClick={handleFinalSubmit}
               className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700"
