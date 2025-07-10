@@ -78,8 +78,8 @@ const Page: React.FC = () => {
       <form
         className={`w-full max-w-[650px] p-6 space-y-4 mx-auto text-white ${qrCode ? 'blur-sm' : ''}`}
       >
-        <h1 className="text-5xl font-antonio text-center mb-6">CURIOVERSE</h1>
-        <div>
+        <h1 className="text-5xl font-antonio text-center mb-12">CURIOVERSE</h1>
+        <div className='my-4'>
           <p className='text-2xl'>Design strategies</p>
         <p className='text-lg'>Appilcations of VR in communication</p>
         </div>
@@ -156,7 +156,7 @@ const Page: React.FC = () => {
       </form>
 
       {qrCode && (
-        <div className="absolute w-[320px] bg-white p-4 rounded border z-10">
+        <div className="absolute w-[340px] bg-white p-4 rounded border z-10">
           <div className="border-b-2 p-2 flex justify-between items-center">
             <h1 className="font-semibold">Scan and Pay</h1>
             <X onClick={() => setQrCode(false)} className="cursor-pointer" />
@@ -164,12 +164,14 @@ const Page: React.FC = () => {
 
           <div className="flex flex-col items-center mt-4 space-y-4">
             <Image src="/GooglePay_QR.png" alt="QR Code" width={220} height={220} />
-            <Link
+            <a
               href={process.env.NEXT_PUBLIC_UPI_LINK ?? '#'}
-              className="bg-[#1c63b4] text-white px-4 py-2 rounded"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="bg-[#1c63b4] text-white px-4 py-2 rounded hover:bg-[#238aff]"
             >
               Pay via UPI / Gpay
-            </Link>
+            </a>
 
             <div
               className="flex flex-col items-center justify-center border-2 border-dashed border-gray-400 rounded p-4 cursor-pointer hover:border-[#1c63b4] text-center"
