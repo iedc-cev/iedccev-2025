@@ -163,7 +163,7 @@ const Page: React.FC = () => {
           </div>
 
           <div className="flex flex-col items-center mt-4 space-y-4">
-            <Image src="/GooglePay_QR.png" alt="QR Code" width={220} height={220} />
+            <Image src="/AnandhuQR.png" alt="QR Code" width={220} height={220} />
             <a
               href={process.env.NEXT_PUBLIC_UPI_LINK ?? '#'}
               target="_blank"
