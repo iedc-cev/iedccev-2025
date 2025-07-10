@@ -195,7 +195,6 @@ const Page: React.FC = () => {
                 <p className="mt-2 text-green-600 text-xs">{screenshotFile.name}</p>
               )}
             </div>
-            <p className='text-black text-lg'>Link:{process.env.NEXT_PUBLIC_UPI_LINK}</p>
             <button
               onClick={handleFinalSubmit}
               className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700"
