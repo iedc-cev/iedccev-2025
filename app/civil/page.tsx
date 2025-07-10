@@ -163,16 +163,16 @@ const Page: React.FC = () => {
           </div>
 
           <div className="flex flex-col items-center mt-4 space-y-4">
-            <Image src="/AnandhuQR.png" alt="QR Code" width={220} height={220} />
-            <a
+            <Image src="GooglePay_QR.png" alt="QR Code" width={220} height={220} />
+            {/* <a
               href={process.env.NEXT_PUBLIC_UPI_LINK ?? '#'}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#1c63b4] text-white px-4 py-2 rounded hover:bg-[#238aff]"
             >
               Pay via UPI / Gpay
-            </a>
-
+            </a> */}
+            <p>Gpay : +91 7559907591</p>
             <div
               className="flex flex-col items-center justify-center border-2 border-dashed border-gray-400 rounded p-4 cursor-pointer hover:border-[#1c63b4] text-center"
               onDragOver={(e) => e.preventDefault()}
