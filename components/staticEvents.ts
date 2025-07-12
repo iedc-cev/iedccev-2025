@@ -1,0 +1,32 @@
+export const staticEvents = [
+  {
+    id: "1",
+    title: "CURIOVERSE",
+    date: "2025-07-15",
+    time: "9:00 AM",
+    venue: "ASAP Room,CEV",
+    poster_url: "/posters/civil.jpg",
+    is_live: true,
+    registration_link: "https://www.iedccev.org/civil",
+  },
+  {
+    id: "2",
+    title: "Startup Pitch Competition",
+    date: "2024-07-20",
+    time: "10:00 AM",
+    venue: "Innovation Lab",
+    poster_url: "/placeholder.svg?height=200&width=400",
+    is_live: false,
+    registration_link: "https://forms.google.com/startup-pitch",
+  },
+  {
+    id: "3",
+    title: "Workshop: AI & ML Basics",
+    date: "2024-06-10",
+    time: "9:00 AM",
+    venue: "Computer Lab",
+    poster_url: "/placeholder.svg?height=200&width=400",
+    is_live: false,
+    aftermovie_link: "https://youtube.com/watch?v=sample",
+  },
+]
