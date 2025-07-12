@@ -30,7 +30,7 @@ const staticEvents = [
     time: "10:00 AM",
     venue: "Innovation Lab",
     poster_url: "/placeholder.svg?height=200&width=400",
-    is_live: true,
+    is_live: false,
     registration_link: "https://forms.google.com/startup-pitch",
   },
   {
@@ -54,7 +54,7 @@ export default function EventsPage() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-[#1A4C96] to-blue-600 text-white">
+      {/* <section className="py-20 bg-gradient-to-br from-[#1A4C96] to-blue-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             Events That Build Futures. <span className="text-blue-200">And Memories.</span>
@@ -63,17 +63,17 @@ export default function EventsPage() {
             Workshops. Talks. Tech. Treasure Hunts. Town Vibes.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Live Events */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12">Live Events</h2>
+          <h2 className="text-4xl font-semibold text-gray-900 mb-12">Live Events</h2>
 
           {liveEvents.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {liveEvents.map((event) => (
-                <Card key={event.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div key={event.id} className="rounded-sm shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="aspect-video relative">
                     <Image
                       src={event.poster_url || "/placeholder.svg"}
@@ -109,7 +109,7 @@ export default function EventsPage() {
                       </a>
                     </Button>
                   </CardContent>
-                </Card>
+                </div>
               ))}
             </div>
           ) : (
@@ -127,12 +127,12 @@ export default function EventsPage() {
       {/* Past Events */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12">Past Events</h2>
+          <h2 className="text-4xl font-semibold text-gray-900 mb-12">Past Events</h2>
 
           {pastEvents.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {pastEvents.map((event) => (
-                <Card key={event.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div key={event.id} className="rounded-sm shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="aspect-video relative">
                     <Image
                       src={event.poster_url || "/placeholder.svg"}
@@ -143,7 +143,7 @@ export default function EventsPage() {
                     <div className="absolute inset-0 bg-black/20" />
                   </div>
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold mb-3">{event.title}</h3>
+                    <h3 className="text-xl font-medium mb-3">{event.title}</h3>
                     <div className="flex items-center text-gray-600 mb-4">
                       <Calendar className="h-4 w-4 mr-2" />
                       <span>{new Date(event.date).toLocaleDateString()}</span>
@@ -162,7 +162,7 @@ export default function EventsPage() {
                       </Button>
                     )}
                   </CardContent>
-                </Card>
+                </div>
               ))}
             </div>
           ) : (
@@ -174,39 +174,6 @@ export default function EventsPage() {
               <p className="text-gray-600">Our event history will appear here.</p>
             </div>
           )}
-        </div>
-      </section>
-
-      {/* Town Vibes Gallery Preview */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Town Vibes</h2>
-            <p className="text-xl text-gray-600">Capturing the essence of our community</p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <div
-                key={i}
-                className="aspect-square bg-gray-200 rounded-lg overflow-hidden hover:scale-105 transition-transform"
-              >
-                <Image
-                  src={`/placeholder.svg?height=200&width=200`}
-                  alt={`Town Vibes ${i + 1}`}
-                  width={200}
-                  height={200}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-8">
-            <Button size="lg" variant="outline" asChild>
-              <Link href="/gallery">View Full Gallery</Link>
-            </Button>
-          </div>
         </div>
       </section>
     </div>

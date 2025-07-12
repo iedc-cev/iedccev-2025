@@ -59,7 +59,7 @@ export default function Navbar() {
                 Home
               </Link>
               <Link
-                href="/"
+                href="/events"
                 className="block px-3 py-2 text-gray-700 hover:text-[#1A4C96]"
                 onClick={() => setIsOpen(false)}
               >
