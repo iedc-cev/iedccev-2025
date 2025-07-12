@@ -1,7 +1,7 @@
 export const Leads = [
     {
         name: "Abhin C",
-        image: "/teamimg/abhin.jpg",
+        image: "/teamimg/abhin.webp",
         role:"Student Lead",
         social: {
           Instagram: "https://www.instagram.com/iedc_cev/",
