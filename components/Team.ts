@@ -1,7 +1,7 @@
 export const Leads = [
     {
         name: "Abhin C",
-        image: "/teamimg/abhin.webp",
+        image: "/teamimg/abhin.jpg",
         role:"Student Lead",
         social: {
           Instagram: "https://www.instagram.com/iedc_cev/",
@@ -10,7 +10,7 @@ export const Leads = [
       },
       {
         name: "Ashwini",
-        image: "/teamimg/aswini.jpg",
+        image: "/teamimg/ashwini.jpg",
         role:"Student Lead",
         social: {
           facebook: "https://www.instagram.com/iedc_cev/",
@@ -109,7 +109,7 @@ export const Leads = [
       },
       {
         name: "Zeenath K P",
-        image: "/teamimg/zeenth.jpeg",
+        image: "/teamimg/zeenth.jpg",
         role:"Women innovation Lead",
         social: {
           facebook: "https://www.instagram.com/iedc_cev/",

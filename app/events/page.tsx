@@ -19,7 +19,7 @@ const staticEvents = [
     time: "2:00 PM",
     venue: "Main Auditorium",
     poster_url: "/placeholder.svg?height=200&width=400",
-    is_live: true,
+    is_live: false,
     registration_link: "https://forms.google.com/tech-talk-2024",
   },
   {
