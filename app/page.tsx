@@ -64,7 +64,7 @@ export default function HomePage() {
         scrollToPage(next);
         return next;
       });
-    }, 3000);
+    }, 2000);
     return () => clearInterval(interval);
   }, [pageCount]);
 
