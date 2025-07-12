@@ -4,8 +4,8 @@ export const Leads = [
         image: "/teamimg/abhin.jpg",
         role:"Student Lead",
         social: {
-          Instagram: "https://www.instagram.com/iedc_cev/",
-          linkedin: "https://www.instagram.com/iedc_cev/",
+          Instagram: "https://www.instagram.com/abhin__c",
+          linkedin: "https://www.linkedin.com/in/abhin-c",
         },
       },
       {
@@ -13,8 +13,8 @@ export const Leads = [
         image: "/teamimg/ashwini.jpg",
         role:"Student Lead",
         social: {
-          facebook: "https://www.instagram.com/iedc_cev/",
-          linkedin: "https://www.instagram.com/iedc_cev/",
+          facebook: "https://www.instagram.com/ashwiniiii_15_",
+          linkedin: "https://www.linkedin.com/in/ashwini-velandi-686774324",
         },
       },
       {
@@ -22,8 +22,8 @@ export const Leads = [
         image: "/teamimg/sooraj.jpg",
         role:"Quality and Operation Lead",
         social: {
-          facebook: "https://www.instagram.com/iedc_cev/",
-          linkedin: "https://www.instagram.com/iedc_cev/",
+          facebook: "https://www.instagram.com/___soorajbs___",
+          linkedin: "https://www.linkedin.com/in/sooraj-bs-1207b334b",
         },
       },
       {
@@ -31,8 +31,8 @@ export const Leads = [
         image: "/teamimg/hijas.jpg",
         role:"Quality and Operation Lead",
         social: {
-          facebook: "https://www.instagram.com/iedc_cev/",
-          linkedin: "https://www.instagram.com/iedc_cev/",
+          facebook: "https://www.instagram.com/hi._jas_",
+          linkedin: "https://www.linkedin.com/in/muhammad-hijas-hijas-73b60a32a?",
         },
       },
       {
@@ -40,8 +40,8 @@ export const Leads = [
         image: "/teamimg/anandhu.jpeg",
         role:'Tech Lead',
         social: {
-          facebook: "https://www.instagram.com/iedc_cev/",
-          linkedin: "https://www.instagram.com/iedc_cev/",
+          facebook: "https://www.instagram.com/_au_ak_",
+          linkedin: "http://linkedin.com/in/ananthu-ashok",
         },
       },
       {
@@ -58,8 +58,8 @@ export const Leads = [
         image: "/teamimg/lekshmi.jpg",
         role:"IPR and Research Lead",
         social: {
-          facebook: "https://www.instagram.com/iedc_cev/",
-          linkedin: "https://www.instagram.com/iedc_cev/",
+          facebook: "https://www.instagram.com/_cla.x.ke_",
+          linkedin: "https://www.linkedin.com/in/thaj-r-s-049439328",
         },
       },
       {
@@ -67,8 +67,8 @@ export const Leads = [
         image: "/teamimg/dhanush.jpg",
         role:"IPR and Research Lead",
         social: {
-          facebook: "https://www.instagram.com/iedc_cev/",
-          linkedin: "https://www.instagram.com/iedc_cev/",
+          facebook: "https://www.instagram.com/__dhanu_sh",
+          linkedin: "https://www.linkedin.com/in/dhanush-s-gireesh-95a299353",
         },
       },
       {
@@ -76,8 +76,8 @@ export const Leads = [
         image: "/teamimg/jomin.jpg",
         role:"Community Lead",
         social: {
-          facebook: "https://www.instagram.com/iedc_cev/",
-          twitter: "https://www.instagram.com/iedc_cev/",
+          facebook: "https://www.instagram.com/jomi_.xn",
+          twitter: "https://www.linkedin.com/in/jominbinny",
         },
       },
       {
@@ -85,8 +85,8 @@ export const Leads = [
         image: "/teamimg/anaswara.jpg",
         role:"Branding and Marketing",
         social: {
-          facebook: "https://www.instagram.com/iedc_cev/",
-          linkedin: "https://www.instagram.com/iedc_cev/",
+          facebook: "https://www.instagram.com/_anaswara__anil",
+          linkedin: "https://www.linkedin.com/in/anaswara-a-5831a3292",
         },
       },
       {
@@ -94,8 +94,8 @@ export const Leads = [
         image: "/teamimg/maisa.jpeg",
         role:"Innovation and Creative Lead",
         social: {
-          facebook: "https://www.instagram.com/iedc_cev/",
-          linkedin: "https://www.instagram.com/iedc_cev/",
+          facebook: "https://www.instagram.com/maisaaa.i/",
+          linkedin: "https://www.linkedin.com/in/maisa-ismail-9012152a1/",
         },
       },
       {
@@ -103,8 +103,8 @@ export const Leads = [
         image: "/teamimg/thejus.jpeg",
         role:"Finance Lead",
         social: {
-          facebook: "https://www.instagram.com/iedc_cev/",
-          linkedin: "https://www.instagram.com/iedc_cev/",
+          facebook: "https://www.instagram.com/thejus.__",
+          linkedin: "https://www.linkedin.com/in/thejus-santhosh-426193264",
         },
       },
       {
@@ -112,8 +112,8 @@ export const Leads = [
         image: "/teamimg/zeenth.jpg",
         role:"Women innovation Lead",
         social: {
-          facebook: "https://www.instagram.com/iedc_cev/",
-          linkedin: "https://www.instagram.com/iedc_cev/",
+          facebook: "https://www.instagram.com/_zeenathkp",
+          linkedin: "https://www.linkedin.com/in/zeenath-kp",
         },
       },
       {
@@ -121,8 +121,8 @@ export const Leads = [
         image: "/teamimg/adith.jpg",
         role:"Media Lead",
         social: {
-          facebook: "https://www.instagram.com/iedc_cev/",
-          linkedin: "https://www.instagram.com/iedc_cev/",
+          facebook: "https://www.instagram.com/adithxjp",
+          linkedin: "https://www.linkedin.com/in/adith-jp-770893374",
         },
       },
       {
@@ -130,8 +130,8 @@ export const Leads = [
         image: "/teamimg/amarnath.jpg",
         role:"Web Master",
         social: {
-          facebook: "https://www.instagram.com/iedc_cev/",
-          linkedin: "https://www.instagram.com/iedc_cev/",
+          facebook: "www.instagram.com/amarnathsooraj",
+          linkedin: "https://www.linkedin.com/in/amarnathps",
         },
       }
 ]
