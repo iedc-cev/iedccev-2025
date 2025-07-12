@@ -4,8 +4,10 @@ import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, IdCard } from "lucide-react";
 import AnimatedBackground from "@/components/animated-background";
+import { FaLinkedin } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import { Leads } from "@/components/Team";
 
 export default function HomePage() {
@@ -62,7 +64,7 @@ export default function HomePage() {
         scrollToPage(next);
         return next;
       });
-    }, 5000);
+    }, 3000);
     return () => clearInterval(interval);
   }, [pageCount]);
 
@@ -95,7 +97,7 @@ export default function HomePage() {
       {/* 📝 About Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl sm:text-5xl font-medium text-gray-900 mb-4">Who Are We</h2>
+          <h2 className="text-4xl sm:text-5xl font-medium text-gray-900 mb-4 flex justify-center items-center"><IdCard className="mr-2 size-8"/>Who Are We</h2>
           <video
             src="/aboutVideo.mp4"
             autoPlay
@@ -119,7 +121,7 @@ export default function HomePage() {
       {/* 👥 Team Preview Carousel */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center sm:text-left mb-8">
+          <header className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl font-medium text-gray-900 mb-2">Meet the Team</h2>
             <p className="text-lg sm:text-xl text-gray-600">The minds behind the innovation</p>
           </header>
@@ -137,39 +139,39 @@ export default function HomePage() {
 
             {/* 📦 Scrollable team list */}
             <div ref={scrollRef} className="overflow-hidden scroll-smooth snap-x snap-mandatory">
-              <div className="flex space-x-6 pb-4">
-{Leads.map((member) => (
-  <article
-    key={member.name}
-    className="
-      flex-shrink-0
-      w-80 sm:w-50 lg:w-[20rem]
-      snap-center
-      text-center 
-      hover:shadow-lg 
-      transition-shadow 
-      border rounded-sm
-    "
-  >
-    <div className="p-4 sm:p-6">
-      <div className="overflow-hidden mb-4">
-        <Image
-          src={member.image || "/placeholder.svg"}
-          alt={member.name}
-          width={280}
-          height={200}
-          className="object-cover w-full h-[280px] sm:h-[260px]"
-        />
-      </div>
-      <h3 className="text-base sm:text-lg font-medium mb-1">{member.name}</h3>
-      <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">{member.role}</p>
-      <div className="flex justify-center space-x-2">
-        <Button size="sm" variant="outline">IG</Button>
-        <Button size="sm" variant="outline">LI</Button>
-      </div>
-    </div>
-  </article>
-))}
+              <div className="flex space-x-4 pb-4">
+                {Leads.map((member) => (
+                    <article
+                      key={member.name}
+                      className="
+                        flex-shrink-0
+                        w-80 sm:w-50 lg:w-[20rem]
+                        snap-center
+                        text-center 
+                        hover:shadow-lg 
+                        transition-shadow 
+                        border rounded-sm
+                      "
+                    >
+                      <div className="p-4 sm:p-6">
+                        <div className="overflow-hidden mb-4">
+                          <Image
+                            src={member.image || "/placeholder.svg"}
+                            alt={member.name}
+                            width={280}
+                            height={200}
+                            className="object-cover w-full h-[300px] sm:h-[260px]"
+                          />
+                        </div>
+                        <h3 className="text-base sm:text-lg font-medium mb-1">{member.name}</h3>
+                        <p className="text-gray-600 mb-2 sm:mb-2 text-sm sm:text-base">{member.role}</p>
+                        <div className="flex justify-center space-x-2">
+                          <a href={member.social.facebook}><FaInstagram  className="size-6 mr-3 cursor-pointer hover:scale-105"/></a>
+                          <a href={member.social.linkedin}><FaLinkedin className="size-6 ml-3 cursor-pointer hover:scale-105"/></a>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
 
 
               </div>
@@ -187,7 +189,7 @@ export default function HomePage() {
           </div>
 
           {/* 🔘 Dots */}
-          <div className="flex justify-center mt-4 space-x-2">
+          {/* <div className="flex justify-center mt-4 space-x-2">
             {Array.from({ length: pageCount }).map((_, idx) => (
               <button
                 key={idx}
@@ -195,7 +197,7 @@ export default function HomePage() {
                 className={`w-3 h-3 rounded-full ${idx === activePage ? 'bg-gray-800' : 'bg-gray-400'}`}
               />
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
       {/* Events Section */}

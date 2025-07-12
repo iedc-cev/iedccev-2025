@@ -128,7 +128,7 @@ export const Leads = [
       {
         name: "Amarnath PS",
         image: "/teamimg/adith.jpeg",
-        role:"Media Lead",
+        role:"Web Master",
         social: {
           facebook: "https://www.instagram.com/iedc_cev/",
           linkedin: "https://www.instagram.com/iedc_cev/",
