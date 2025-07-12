@@ -18,9 +18,9 @@ export default function EventsPage() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-14 text-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+      <section className="py-10 text-black">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Events That Build Futures. <span className="text-blue-400">And Memories.</span>
           </h1>
           {/* <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
