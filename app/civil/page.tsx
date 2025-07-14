@@ -206,7 +206,7 @@ const Page: React.FC = () => {
     //     </div>
     //   )}
     // </main>
-    <div className="mx-auto">Registration Closed</div>
+    <div className="mx-auto h-screen items-center text-4xl">Registration Closed</div>
   );
 };
 
