@@ -42,9 +42,6 @@ export default function Footer() {
               <Link href="/gallery" className="block text-gray-400 hover:text-white transition-colors">
                 Gallery
               </Link>
-              <Link href="/media" className="block text-gray-400 hover:text-white transition-colors">
-                Media
-              </Link>
               <a
                 href="https://iedc.startupmission.in/"
                 target="_blank"
@@ -79,7 +76,7 @@ export default function Footer() {
                 <span>YouTube</span>
               </a>
               <a
-                href="mailto:iedc@cevadk.ac.in"
+                href="mailto:iedc@cev.ac.in"
                 className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
               >
                 <Mail className="h-4 w-4" />

@@ -31,10 +31,10 @@ export default function Navbar() {
               Events
             </Link>
             <Link href="/" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
-              Gallery
+              Town
             </Link>
             <Link href="/" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
-              Media
+              Gallery
             </Link>
             <Link  href='/join' className="bg-[#1A4C96] hover:bg-[#1A4C96]/90 text-white rounded px-4 py-2">Join IEDC</Link>
           </div>
@@ -70,14 +70,14 @@ export default function Navbar() {
                 className="block px-3 py-2 text-gray-700 hover:text-[#1A4C96]"
                 onClick={() => setIsOpen(false)}
               >
-                Gallery
+                Town
               </Link>
               <Link
                 href="/"
                 className="block px-3 py-2 text-gray-700 hover:text-[#1A4C96]"
                 onClick={() => setIsOpen(false)}
               >
-                Media
+                Gallery
               </Link>
               <div className="px-3 py-2">
                 <Link  href='/' className="bg-[#1A4C96] hover:bg-[#1A4C96]/90 text-white rounded px-4 py-2">Join IEDC</Link>

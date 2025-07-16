@@ -6,7 +6,7 @@ export const staticEvents = [
     time: "9:00 AM",
     venue: "ASAP Room,CEV",
     poster_url: "/posters/civil.jpg",
-    is_live: true,
+    is_live: false,
     registration_link: "https://www.iedccev.org/civil",
   },
   {
