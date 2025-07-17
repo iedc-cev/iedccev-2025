@@ -76,7 +76,7 @@ const Page: React.FC = () => {
   };
 
   return (
-    <main className="fixed w-full min-h-screen bg-[#541210] flex items-center justify-center px-4 overflow-hidden">
+    <main className="relative w-full min-h-screen bg-[#541210] flex items-center justify-center px-4 overflow-hidden">
       <form
         className={`w-full max-w-[650px] p-4 space-y-4 mx-auto text-white rounded-md ${qrCode ? 'blur-sm' : ''}`}
       >
