@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { X } from 'lucide-react';
 
 const departments = ['CS','IT'];
-const semester = ['I','II','III','IV','V','VI','VII','VIII']
+const semester = ['S3','S5','S7']
 
 const Page: React.FC = () => {
   const [formData, setFormData] = useState({
