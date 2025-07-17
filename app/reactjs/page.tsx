@@ -65,7 +65,7 @@ const Page: React.FC = () => {
         if (!res.ok) throw new Error(`Server error: ${res.status}`);
 
         setStatus('Submission successful! Redirecting...');
-        router.push('https://chat.whatsapp.com/KHjnhPgrA34KDTcn5GakpX');
+        router.push('https://chat.whatsapp.com/FERRxLkpa7mHyn6pBjwpri');
       } catch (err) {
         console.error('Screenshot upload error:', err);
         setStatus('Failed to upload screenshot. Try again.');
@@ -76,7 +76,7 @@ const Page: React.FC = () => {
   };
 
   return (
-    <main className="relative w-full h-[100vh] bg-[#541210] flex items-center justify-center px-4 overflow-hidden">
+    <main className="fixed w-full h-[100vh] bg-[#541210] flex items-center justify-center px-4 overflow-hidden">
       <form
         className={`w-full max-w-[650px] p-4 space-y-4 mx-auto text-white rounded-md ${qrCode ? 'blur-sm' : ''}`}
       >
