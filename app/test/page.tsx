@@ -164,7 +164,7 @@ const Page: React.FC = () => {
         <button
         type="button"
         onClick={() => setQrCode(true)}
-        className="bg-[#000000] text-white px-6 py-2 rounded hover:bg-[#2f2f2f]"
+        className="bg-[#000000] text-white px-6 py-3 rounded hover:bg-[#2f2f2f]"
       >
         Submit Details
       </button>
