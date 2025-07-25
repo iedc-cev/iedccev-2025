@@ -12,7 +12,7 @@ export default function Navbar() {
   const pathname = usePathname()
 
   // Hide footer on /join
-  if (pathname === '/reactjs') return null
+  if (pathname === '/eceee' || pathname === '/town') return null
   return (
     <nav className="w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
       <div className="max-w-7xl mx-auto px-4 py-2 sm:px-6 lg:px-8">
@@ -30,7 +30,7 @@ export default function Navbar() {
             <Link href="/events" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
               Events
             </Link>
-            <Link href="/" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
+            <Link href="/town" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
               Town
             </Link>
             <Link href="/" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
