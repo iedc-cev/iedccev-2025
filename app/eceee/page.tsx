@@ -82,8 +82,8 @@ const Page: React.FC = () => {
       >
         <h1 className="text-5xl font-antonio text-center mb-12">CURIOVERSE</h1>
         <div className='my-4'>
-          <p className='text-2xl'>Name of the Event</p>
-        <p className='text-lg'>Subtitle</p>
+          <p className='text-2xl'>Raspberry Pi</p>
+        <p className='text-lg'>Embedded Innovations</p>
         </div>
         <div>
           <div className='border-l-8 px-2 mb-2'>
