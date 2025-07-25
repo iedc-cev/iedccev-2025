@@ -65,7 +65,7 @@ const Page: React.FC = () => {
         if (!res.ok) throw new Error(`Server error: ${res.status}`);
 
         setStatus('Submission successful! Redirecting...');
-        router.push('https://chat.whatsapp.com');
+        router.push('https://chat.whatsapp.com/Dp2V2WUlhvF7FoGLwzg3sf');
       } catch (err) {
         console.error('Screenshot upload error:', err);
         setStatus('Failed to upload screenshot. Try again.');
