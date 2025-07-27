@@ -87,6 +87,13 @@
   background: #f1f1f1;
   border-radius: 4px;
 }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
 
 ::-webkit-scrollbar-thumb {
   background: #1a4c96;
