@@ -1,8 +1,19 @@
 export const staticEvents = [
   {
+    id: "6",
+    title: "CURIOVERSE EC & EEE",
+    date: "2025-07-30",
+    time: "9:00 AM",
+    venue: "ASAP Room,CEV",
+    poster_url: "/posters/civil.jpg",
+    is_live: true,
+    registration_link: "https://www.iedccev.org/eceee",
+    aftermovie_link: "",
+  },
+  {
     id: "5",
-    title: "CURIOVERSE CS",
-    date: "2025-07-22",
+    title: "CURIOVERSE CS & IT",
+    date: "2025-07-29",
     time: "9:00 AM",
     venue: "ASAP Room,CEV",
     poster_url: "/posters/csit.jpg",
@@ -12,13 +23,14 @@ export const staticEvents = [
   },
   {
     id: "1",
-    title: "CURIOVERSE",
+    title: "CURIOVERSE CIVIL",
     date: "2025-07-15",
     time: "9:00 AM",
     venue: "ASAP Room,CEV",
     poster_url: "/posters/civil.jpg",
     is_live: false,
     registration_link: "https://www.iedccev.org/civil",
+    aftermovie_link: "https://www.instagram.com/reel/DMfeyeJzkd3",
   },
   {
     id: "2",

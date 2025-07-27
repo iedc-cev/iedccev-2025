@@ -65,7 +65,7 @@ const Page: React.FC = () => {
         if (!res.ok) throw new Error(`Server error: ${res.status}`);
 
         setStatus('Submission successful! Redirecting...');
-        router.push('https://chat.whatsapp.com');
+        router.push('https://chat.whatsapp.com/Dp2V2WUlhvF7FoGLwzg3sf');
       } catch (err) {
         console.error('Screenshot upload error:', err);
         setStatus('Failed to upload screenshot. Try again.');
@@ -76,14 +76,14 @@ const Page: React.FC = () => {
   };
 
   return (
-    <main className="relative min-h-screen w-full bg-[#0B1D32] flex items-center justify-center px-4 overflow-hidden">
+    <main className="relative min-h-screen w-full bg-[#1E2B22] flex items-center justify-center px-4 overflow-hidden">
       <form
         className={`w-full max-w-[650px] p-6 space-y-4 mx-auto text-white ${qrCode ? 'blur-sm' : ''}`}
       >
         <h1 className="text-5xl font-antonio text-center mb-12">CURIOVERSE</h1>
         <div className='my-4'>
-          <p className='text-2xl'>Name of the Event</p>
-        <p className='text-lg'>Subtitle</p>
+          <p className='text-2xl'>Raspberry Pi</p>
+        <p className='text-lg'>Embedded Innovations</p>
         </div>
         <div>
           <div className='border-l-8 px-2 mb-2'>
