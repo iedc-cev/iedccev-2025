@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 
-const departments = ['CSE', 'IT', 'CIVIL', 'ECE', 'EEE'];
+const departments = ['CSE', 'IT', 'CIVIL', 'ECE', 'EEE','MCA','DIPLOMA'];
 const semester = ['S3', 'S5', 'S7'];
 
 const Page: React.FC = () => {
