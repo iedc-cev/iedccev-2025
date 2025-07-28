@@ -78,6 +78,7 @@ const Page: React.FC = () => {
   return (
     <main className="relative min-h-screen w-full bg-[#fefefe] flex items-center justify-center px-4 overflow-hidden">
       Registration closed
+For enquiry:- +91 7559907591
     </main>
   );
 };
