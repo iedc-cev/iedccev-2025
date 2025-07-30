@@ -82,10 +82,14 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild className="bg-[#1A4C96] hover:bg-[#1A4C96]/90 text-lg px-6 py-3 rounded-xl">
-              <Link href="/join">
+              {/* <Link href="/join">
                 Join IEDC
                 <ArrowRight className="ml-3" />
-              </Link>
+              </Link> */}
+              <a href="https://www.instagram.com/iedc_cev">
+                Join IEDC
+                <ArrowRight className="ml-3" />
+              </a>
             </Button>
             <Button asChild variant="outline" className="text-lg px-6 py-3 border-[#1A4C96] text-[#1A4C96]">
               <Link href="/events">Register for Event</Link>
