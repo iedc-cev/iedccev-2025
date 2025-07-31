@@ -1,12 +1,13 @@
 export const staticEvents = [
   {
-    id: "7",
+    id: 7,
     title: "Career Compass",
     date: "2025-08-1",
     time: "9:00 AM",
     venue: "Mini Auditorium,CEV",
     poster_url: "/posters/Xylem.jpg",
     is_live: true,
+    form_active:true,
     registration_link: "https://www.iedccev.org/xylem",
     aftermovie_link: "",
   },

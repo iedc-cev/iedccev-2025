@@ -8,7 +8,7 @@ export default function Footer() {
   const pathname = usePathname()
 
   // Hide footer on /join
-  if (pathname === '/join' || pathname ===  '/eceee' || pathname ===  '/raspberrypi' || pathname ===  '/xylem' || pathname === '/town') return null
+  if (pathname !== '/' && pathname !== '/events') return null;
 
   return (
     <footer className="bg-[#1c4f75] text-white">
