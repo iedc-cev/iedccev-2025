@@ -59,7 +59,7 @@ const Page: React.FC = () => {
       setIsSubmitting(false);
     }
   };
-  const eventForm = staticEvents.find((item) => item.id === 8);
+  const eventForm = staticEvents.find((item) => item.id === 9);
   return (
     <main className="relative min-h-screen w-full bg-[#FF8A06] flex flex-col items-center justify-center px-4 overflow-hidden">
       {eventForm?.form_active?
