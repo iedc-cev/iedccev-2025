@@ -6,7 +6,7 @@ export const staticEvents = [
     date: "05/08/25",
     time: "1-3pm",
     venue: "Asap Room,CEV",
-    poster_url: "/posters/Xylem.jpg",
+    poster_url: "",
     is_live: true,
     form_active:true,
     registration_link: "https://www.iedccev.org/smash",

@@ -59,7 +59,6 @@ const Page: React.FC = () => {
       setIsSubmitting(false);
     }
   };
-
   const eventForm = staticEvents.find((item) => item.id === 8);
   return (
     <main className="relative min-h-screen w-full bg-[#FF8A06] flex flex-col items-center justify-center px-4 overflow-hidden">
@@ -78,6 +77,7 @@ const Page: React.FC = () => {
                 <p>Date : {eventForm.date}</p>
                 <p>Venue : {eventForm.venue}</p>
             </div>
+            <p className='text-neutral-950'>*(Laptop Mandatory)</p>
         </div>
         <div>
           <input
