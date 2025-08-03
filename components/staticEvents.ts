@@ -1,5 +1,18 @@
 export const staticEvents = [
   {
+    id: 8,
+    title: "Smash",
+    tagline:"Typing Contest",
+    date: "05/08/25",
+    time: "1-3pm",
+    venue: "Asap Room,CEV",
+    poster_url: "/posters/Xylem.jpg",
+    is_live: true,
+    form_active:true,
+    registration_link: "https://www.iedccev.org/smash",
+    aftermovie_link: "",
+  },
+  {
     id: 7,
     title: "Career Compass",
     date: "2025-08-1",

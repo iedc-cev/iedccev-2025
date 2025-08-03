@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { staticEvents } from "@/components/staticEvents"
+import Image from 'next/image'
 
 const departments = ['CSE', 'IT', 'CIVIL', 'ECE', 'EEE','MCA','DIPLOMA'];
 const semester = ['S3', 'S5', 'S7'];
@@ -49,7 +50,7 @@ const Page: React.FC = () => {
 
       setStatus('Submission successful! Redirecting...');
       setTimeout(() => {
-        window.location.href = 'https://chat.whatsapp.com/DoDO2OmhK873N4raUZ3ocW'; // Replace this
+        window.location.href = 'https://chat.whatsapp.com/KWlbP3yWX8U18fE8QjMBGf'; // Replace this
       }, 1500);
     } catch (err) {
       console.error('Submission error:', err);
@@ -59,20 +60,21 @@ const Page: React.FC = () => {
     }
   };
 
-  const eventForm = staticEvents.find((item) => item.id === 7);
+  const eventForm = staticEvents.find((item) => item.id === 8);
   return (
-    <main className="relative min-h-screen w-full bg-[#fefefe] flex flex-col items-center justify-center px-4 overflow-hidden">
+    <main className="relative min-h-screen w-full bg-[#FF8A06] flex flex-col items-center justify-center px-4 overflow-hidden">
       {eventForm?.form_active?
       <motion.form
       initial={{ opacity: 0}}     // start hidden & moved down
       animate={{ opacity: 1}}      // fade in & move to original position
-      transition={{ duration: 1.5, ease: 'easeInOut' }}
+      transition={{ duration: 1, ease: 'easeInOut' }}
+
       className="w-full max-w-3xl p-6 space-y-6 mx-auto flex flex-col h-[700px] justify-between">
-        <div className='text-center text-[#06AB4C] space-y-2'>
-            <h1 className="text-5xl">{eventForm.title}</h1>
-            <p className='font-semibold'>Explore Careers in</p>
-            <p className='font-bold'>IAS | SSC | RRB | BANKING</p>
+        <div className=' text-[#fefefe] space-y-1'>
+            <Image src='SMASH.png' alt='eventname' width={250} height={150} className=''/>
+            <p className='font-semibold text-xl'>{eventForm.tagline}</p>
             <div className='text-start mt-3'>
+              <p>Time : {eventForm.time}</p>
                 <p>Date : {eventForm.date}</p>
                 <p>Venue : {eventForm.venue}</p>
             </div>
@@ -85,7 +87,7 @@ const Page: React.FC = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full p-3 rounded border-[#06AB4C] border text-black hover:border-[#185b12] focus:border-[#185b12] focus:outline-none"
+            className="w-full p-3 rounded border text-black focus:outline-none"
           />
         </div>
 
@@ -97,7 +99,7 @@ const Page: React.FC = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full p-3 rounded border-[#06AB4C] border text-black hover:border-[#185b12] focus:border-[#185b12] focus:outline-none"
+            className="w-full p-3 rounded border text-black focus:outline-none"
           />
         </div>
 
@@ -107,7 +109,7 @@ const Page: React.FC = () => {
             value={formData.department}
             onChange={handleChange}
             required
-            className="w-full p-3 rounded border-[#06AB4C] border text-black hover:border-[#185b12] focus:border-[#185b12] focus:outline-none"
+            className="w-full p-3 rounded border text-black focus:outline-none"
           >
             <option value="">Select Department</option>
             {departments.map((dept, idx) => (
@@ -122,7 +124,7 @@ const Page: React.FC = () => {
             value={formData.semester}
             onChange={handleChange}
             required
-            className="w-full p-3 rounded border-[#06AB4C] border text-black hover:border-[#185b12] focus:border-[#185b12] focus:outline-none"
+            className="w-full p-3 rounded border text-black focus:outline-none"
           >
             <option value="">Select Semester</option>
             {semester.map((sem, idx) => (
@@ -141,15 +143,14 @@ const Page: React.FC = () => {
             value={formData.mobileNo}
             onChange={handleChange}
             required
-            className="w-full p-3 rounded border-[#06AB4C] border text-black hover:border-[#185b12] focus:border-[#185b12] focus:outline-none"
-          />
+            className="w-full p-3 rounded border text-black focus:outline-none"/>
         </div>
 
         <button
           type="button"
           onClick={handleFinalSubmit}
           disabled={isSubmitting}
-          className={`bg-[#06AB4C] text-white px-10 py-3 rounded hover:bg-[#1f9450] self-center ${
+          className={`bg-[#676666] text-white w-full py-3 rounded hover:bg-[#6e6d6d] self-center ${
             isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
           }`}
         >
