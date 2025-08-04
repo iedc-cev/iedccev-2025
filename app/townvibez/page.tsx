@@ -60,6 +60,14 @@ function Page() {
             </div>
 
             <div className='max-w-[750px] mx-auto overflow-hidden shadow-md bg-[#292833] rounded-3xl text-white flex flex-col items-center py-6'>
+              <div
+                  className={`flex justify-between w-[80%] items-center mb-1 h-12 py-10`}
+                >
+                  <p className="w-1/6 text-center">Rank</p>
+                  <p className="w-1/6 text-center">Name</p>
+                  <p className="w-1/5 text-center">Deparment</p>
+                  <p className="w-1/6 text-center">Points</p>
+                </div>
               {remLeaderBoard.map((entry, index) => (
                 <div
                   key={`${entry.name}-${index}`}
