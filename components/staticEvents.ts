@@ -8,7 +8,7 @@ export const staticEvents = [
     venue: "Asap Room,CEV",
     poster_url: "/posters/Xylem.jpg",
     is_live: true,
-    form_active: false,
+    form_active: true,
     registration_link: "https://www.iedccev.org/smash",
     aftermovie_link: "",
   },
