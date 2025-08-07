@@ -73,7 +73,7 @@ const Page: React.FC = () => {
       animate={{ opacity: 1}}      // fade in & move to original position
       transition={{ duration: 1, ease: 'easeInOut' }}
 
-      className="w-full max-w-2xl p-6 space-y-4 mx-auto flex flex-col justify-between">
+      className="w-full max-w-5xl p-3 space-y-4 mx-auto flex flex-col justify-between">
         <div className=' text-[#fefefe] space-y-2'>
             <p className='text-5xl font-[Poppins]'>{eventForm.head}</p>
             <p className='text-4xl'>{eventForm.title}</p>
