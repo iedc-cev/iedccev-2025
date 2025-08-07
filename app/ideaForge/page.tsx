@@ -66,7 +66,7 @@ const Page: React.FC = () => {
   }
 
   return (
-    <main className="relative min-h-screen w-full bg-gradient-to-b from-[#c47f3b] to-[#d4a77a] flex flex-col items-center justify-center px-4 overflow-hidden">
+    <main className="fixed min-h-screen w-full bg-gradient-to-b from-[#c47f3b] to-[#d4a77a] flex flex-col items-center justify-center px-4 overflow-hidden">
       {eventForm?.form_active?
       <motion.form
       initial={{ opacity: 0}}     // start hidden & moved down
