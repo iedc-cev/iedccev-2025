@@ -66,15 +66,15 @@ const Page: React.FC = () => {
   }
 
   return (
-    <main className="relative min-h-screen w-full bg-[#c47f3b] flex flex-col items-center justify-center px-2 overflow-hidden">
+    <main className="relative min-h-screen w-full bg-gradient-to-b from-[#c47f3b] to-[#d4a77a] flex flex-col items-center justify-center px-4 overflow-hidden">
       {eventForm?.form_active?
       <motion.form
       initial={{ opacity: 0}}     // start hidden & moved down
       animate={{ opacity: 1}}      // fade in & move to original position
       transition={{ duration: 1, ease: 'easeInOut' }}
 
-      className="w-full max-w-5xl py-6 px-4 space-y-4 mx-auto flex flex-col justify-between rounded-[7%] border bg-gradient-to-b from-[#c47f3b] to-[#e9c88b]">
-        <div className=' text-[#fefefe] space-y-1'>
+      className="w-full max-w-2xl p-6 space-y-4 mx-auto flex flex-col justify-between">
+        <div className=' text-[#fefefe] space-y-2'>
             <p className='text-5xl font-[Poppins]'>{eventForm.head}</p>
             <p className='text-4xl'>{eventForm.title}</p>
             <p className='font-semibold text-lg text-[#514e4e]'>{eventForm.tagline}</p>
