@@ -84,6 +84,7 @@ const Page: React.FC = () => {
                 <p>Venue : {eventForm.venue}</p>
             </div> */}
         </div>
+        <div className='space-y-3'>
         <div>
           <input
             name="name"
@@ -170,6 +171,7 @@ const Page: React.FC = () => {
         >
           {isSubmitting ? 'Submitting...' : 'Submit Details'}
         </button>
+        </div>
 
         {status && <p className="text-md font-semibold text-black text-center">{status}</p>}
       </motion.form>:
