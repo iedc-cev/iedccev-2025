@@ -18,9 +18,9 @@ export default function EventsPage() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-10 text-black">
+      <section className="py-4 text-black">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-2">
             Events That Build Futures. <span className="text-blue-400">And Memories.</span>
           </h1>
           {/* <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
@@ -30,7 +30,7 @@ export default function EventsPage() {
       </section>
 
       {/* Live Events */}
-      <section className="py-20">
+      <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-semibold text-gray-900 mb-12">Live Events</h2>
 
@@ -93,7 +93,7 @@ export default function EventsPage() {
           <h2 className="text-4xl font-semibold text-gray-900 mb-12">Past Events</h2>
 
           {pastEvents.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {pastEvents.map((event) => (
                 <div key={event.id} className="rounded-sm shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="aspect-video relative">
@@ -106,7 +106,7 @@ export default function EventsPage() {
                     <div className="absolute inset-0 bg-black/20" />
                   </div>
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-medium mb-3">{event.title}</h3>
+                    <h3 className="text-md md:text-xl font-medium mb-3">{event.title}</h3>
                     <div className="flex items-center text-gray-600 mb-4">
                       <Calendar className="h-4 w-4 mr-2" />
                       <span>{new Date(event.date).toLocaleDateString()}</span>

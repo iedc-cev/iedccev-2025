@@ -71,10 +71,10 @@ export default function HomePage() {
   return (
     <div className="pt-16">
       {/* 🏠 Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         <AnimatedBackground />
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-medium text-gray-900 mb-6 uppercase">
+          <h1 className="text-5xl md:text-6xl font-medium text-gray-900 mb-6 uppercase">
             Create. <span className="text-[#1A4C96]">Innovate.</span> <span className="text-gray-700">Explore.</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">

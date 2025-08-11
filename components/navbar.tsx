@@ -33,9 +33,9 @@ export default function Navbar() {
             <Link href="/town" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
               Town
             </Link>
-            <Link href="/" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
+            <a href="www.instagram.com/iedc_cev" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
               Gallery
-            </Link>
+            </a>
             <Link  href='/join' className="bg-[#1A4C96] hover:bg-[#1A4C96]/90 text-white rounded px-4 py-2">Join IEDC</Link>
           </div>
 
@@ -72,13 +72,12 @@ export default function Navbar() {
               >
                 Town
               </Link>
-              <Link
-                href="/"
+              <a href="https://www.instagram.com/iedc_cev"
                 className="block px-3 py-2 text-gray-700 hover:text-[#1A4C96]"
                 onClick={() => setIsOpen(false)}
               >
                 Gallery
-              </Link>
+              </a>
               <div className="px-3 py-2">
                 <Link  href='/' className="bg-[#1A4C96] hover:bg-[#1A4C96]/90 text-white rounded px-4 py-2">Join IEDC</Link>
               </div>
