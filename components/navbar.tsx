@@ -66,7 +66,7 @@ export default function Navbar() {
                 Events
               </Link>
               <Link
-                href="/"
+                href="/town"
                 className="block px-3 py-2 text-gray-700 hover:text-[#1A4C96]"
                 onClick={() => setIsOpen(false)}
               >
@@ -79,7 +79,7 @@ export default function Navbar() {
                 Gallery
               </a>
               <div className="px-3 py-2">
-                <Link  href='/' className="bg-[#1A4C96] hover:bg-[#1A4C96]/90 text-white rounded px-4 py-2">Join IEDC</Link>
+                <Link  href='/join' className="bg-[#1A4C96] hover:bg-[#1A4C96]/90 text-white rounded px-4 py-2">Join IEDC</Link>
               </div>
             </div>
           </div>
