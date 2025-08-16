@@ -20,7 +20,7 @@ export default function TownPage() {
   );
 
   return (
-    <div className="relative text-white bg-zinc-600 min-h-screen">
+    <div className="relative text-white bg-zinc-700 min-h-screen">
       {/* Back Button */}
       <div className="px-8 py-4 md:px-[10%] flex justify-between items-center">
         <Link href="/" className="flex flex-col items-start">
