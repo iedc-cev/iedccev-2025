@@ -62,7 +62,7 @@ const Page: React.FC = () => {
     head:"PROJECT CALL",
     title:"IdeaForge",
     tagline:"Where Raw Ideas Are Crafted Into Reality",
-    form_active:true
+    form_active:false
   }
 
   return (
