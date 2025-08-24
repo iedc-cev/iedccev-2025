@@ -2,16 +2,16 @@ import React from 'react'
 import Image from 'next/image'
 export default function page() {
   return (
-        <div className="relative min-h-screen w-full">
-          {/* Background Image */}
-          <Image
+        <div className="relative min-h-screen w-full flex flex-col items-center justify-center p-2 flow-hidden">
+        <div className="w-full max-w-7xl py-10 mx-auto flex flex-col justify-between rounded-3xl">
+            <Image
             src="/posters/OnamAI.jpg" // path inside public/posters/
             alt="Background"
             fill   // makes the image cover the parent div
-            className="object-cover brightness-50"
+            className=" brightness-50"
             priority
           />
-    
+        </div>
           <div className="relative z-10 flex flex-col items-center justify-end min-h-[600px]">
             <a
               href="https://forms.gle/ryZ3ScEwUqAEzyxr5"
