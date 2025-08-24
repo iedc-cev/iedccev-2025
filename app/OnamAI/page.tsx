@@ -18,7 +18,7 @@ export default function Page() {
       {/* Centered Content */}
       <div className="relative z-10 flex flex-col items-center justify-end min-h-[80vh]">
         <a
-          href="https://forms.gle/ZzuGWuCQGkyykTXa7"
+          href="https://forms.gle/ryZ3ScEwUqAEzyxr5"
           className="bg-white px-6 py-3 rounded-lg shadow-md text-black font-medium hover:bg-[#b6b5b5] hover:scale-95 active:scale-105 transition-all duration-100"
         >
           Register Now
