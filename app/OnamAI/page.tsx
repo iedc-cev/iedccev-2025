@@ -11,7 +11,7 @@ export default function Page() {
     <div className="rounded-sm overflow-hiddentransition-shadow max-h-[900px] flex flex-col justify-between items-center">
         <div className=" aspect-auto relative flex max-w-4xl h-[500px]">
             <Image
-            src="/posters/onam.jpg"
+            src="/posters/onam.webp"
             alt="rgerg"
             width={200}
             height={600}
