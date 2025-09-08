@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge"
 import { Calendar, MapPin, Clock, ExternalLink } from "lucide-react"
 import { staticEvents } from "@/components/staticEvents"
 
+
 export default function EventsPage() {
   const [events] = useState(staticEvents)
   const liveEvents = events.filter((event) => event.is_live)
@@ -18,9 +19,9 @@ export default function EventsPage() {
   return (
     <div className="pt-12">
       {/* Hero Section */}
-      <section className="py-4 text-black">
+      <section className="py-2 text-black">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-2">
+          <h1 className="text-4xl md:text-5xl font-semibold mb-2">
             Events That Build Futures. <span className="text-blue-400">And Memories.</span>
           </h1>
           {/* <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
@@ -32,7 +33,7 @@ export default function EventsPage() {
       {/* Live Events */}
       <section className="py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-semibold text-gray-900 mb-12">Live Events</h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-8">Live Events</h2>
 
           {liveEvents.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -76,8 +77,8 @@ export default function EventsPage() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-12">
-              <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center py-10">
+              <div className="w-24 h-6 flex items-center justify-center mx-auto mb-4">
                 <Calendar className="h-12 w-12 text-gray-400" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">No Live Events</h3>
@@ -90,7 +91,7 @@ export default function EventsPage() {
       {/* Past Events */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-semibold text-gray-900 mb-12">Past Events</h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-12">Past Events</h2>
 
           {pastEvents.length > 0 ? (
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -136,6 +137,12 @@ export default function EventsPage() {
               <p className="text-gray-600">Our event history will appear here.</p>
             </div>
           )}
+          <div className="flex justify-center mt-8">
+            <Link 
+              href="https://www.instagram.com/iedc_cev"
+              className="bg-sky-900 px-6 py-2 rounded-sm text-white"
+            >More</Link>
+          </div>
         </div>
       </section>
       

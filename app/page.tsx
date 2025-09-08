@@ -9,6 +9,7 @@ import AnimatedBackground from "@/components/animated-background";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { Leads } from "@/components/Team";
+import { TypeAnimation } from 'react-type-animation';
 
 export default function HomePage() {
   const scrollRef = useRef<HTMLDivElement>(null);  // Ref for scrolling container
@@ -74,22 +75,35 @@ export default function HomePage() {
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         <AnimatedBackground />
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-medium text-gray-900 mb-6 uppercase">
-            Create. <span className="text-[#1A4C96]">Innovate.</span> <span className="text-gray-700">Explore.</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <TypeAnimation
+          className="text-5xl md:text-6xl font-medium font-[Arial] text-gray-700 uppercase"
+          sequence={[
+            'Create', // Text to type
+            1000, // Delay in milliseconds before deleting
+            'Innovate',
+            1000,
+            'Explore',
+            1000,
+          ]}
+          wrapper="span" // HTML element to wrap the animation
+          cursor={true} // Show or hide the blinking cursor
+          repeat={Infinity} // Repeat the animation indefinitely
+          speed={50} // Typing speed (higher value is slower)
+          deletionSpeed={80} // Deletion speed
+        />
+          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto mt-6">
             Where ideas meet execution. Join the innovation revolution at IEDC CE Vadakara.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild className="bg-[#1A4C96] hover:bg-[#1A4C96]/90 text-lg px-6 py-3 rounded-xl">
-              {/* <Link href="/join">
+              <Link href="/join">
                 Join IEDC
                 <ArrowRight className="ml-3" />
-              </Link> */}
-              <a href="https://www.instagram.com/iedc_cev">
+              </Link>
+              {/* <a href="https://www.instagram.com/iedc_cev">
                 Join IEDC
                 <ArrowRight className="ml-3" />
-              </a>
+              </a> */}
             </Button>
             <Button asChild variant="outline" className="text-lg px-6 py-3 border-[#1A4C96] text-[#1A4C96]">
               <Link href="/events">Register for Event</Link>
@@ -149,7 +163,7 @@ export default function HomePage() {
                       key={member.name}
                       className="
                         flex-shrink-0
-                        w-80 sm:w-50 lg:w-[20rem]
+                        w-80 sm:w-45 lg:w-[18rem]
                         snap-center
                         text-center 
                         hover:shadow-lg 

@@ -15,6 +15,8 @@ const EventsForm = () => {
   });
 
   const [status, setStatus] = useState('');
+  const [redirect,setRedirect]=useState(false);
+
   const router = useRouter(); // ✅ initialize router
 
   const handleChange = (
@@ -26,11 +28,11 @@ const EventsForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setRedirect(true);
     setStatus('Submitting...');
-
     try {
       await fetch(
-        'https://script.google.com/macros/s/AKfycbwZtGjC_Z_tA4D4fIXZcqWKq6MYeklehF1emMi_NDS50BwtjkJpiBTJINPe-WAJE36ySA/exec',
+        'https://script.google.com/macros/s/AKfycbyIzu5BzVI2Ju-n0U8WQVErIhvc_2rCSZquPmXr7HoDUmZaE5uOIxRGmoLa7r39Z5I0CA/exec',
         {
           method: 'POST',
           mode: 'no-cors',
@@ -40,14 +42,13 @@ const EventsForm = () => {
           body: JSON.stringify(formData),
         }
       );
-
-      setStatus('Form submitted successfully!');
+      setStatus('Redirecting to the Whatsapp Group');
       setFormData({ name: '', email: '', department: '', mobileNo: '' });
 
       const whatsappLink = 'https://chat.whatsapp.com/BPwIeWpDT1Y42Op7j1Tcul';
       router.push(whatsappLink);
-    } catch (err) {
-      console.error('Submission error:', err);
+    } 
+    catch (err) {
       setStatus('Submission failed. Try again.');
     }
   };
@@ -55,7 +56,7 @@ const EventsForm = () => {
   return (
     <main className="min-h-screen w-full text-white">
       <div className="mx-auto min-h-screen w-full md:w-1/2 flex items-center justify-center p-6 text-gray-900 bg-[#fefefe]">
-        <form
+        {!redirect?(<form
           onSubmit={handleSubmit}
           className="w-full max-w-[650px] p-8 space-y-6"
         >
@@ -139,9 +140,9 @@ const EventsForm = () => {
           >
             Join Now
           </button>
-
-          {status && <p className="text-sm text-[#1c2c81]">{status}</p>}
-        </form>
+          {/* {status &&  */}
+        </form>):
+        <p className="text-sm text-[#1c2c81]">{status}</p>}
       </div>
     </main>
   );
