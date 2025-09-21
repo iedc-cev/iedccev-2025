@@ -2,7 +2,7 @@ import React from 'react'
 import {redirect} from 'next/navigation'
 
 function page() {
-    redirect('https://www.google.com')
+    redirect('https://snaptiqz.com/event/k6Afqmu0MYI6_YrufAep9')
 }
 
 export default page
