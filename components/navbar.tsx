@@ -33,7 +33,7 @@ export default function Navbar() {
             <Link href="/" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
               Town
             </Link>
-            <a href="www.instagram.com/iedc_cev" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
+            <a href="https://www.instagram.com/iedc_cev" className="text-gray-700 hover:text-[#1A4C96] transition-colors">
               Gallery
             </a>
             <Link  href='/join' className="bg-[#1A4C96] hover:bg-[#1A4C96]/90 text-white rounded px-4 py-2">Join IEDC</Link>
