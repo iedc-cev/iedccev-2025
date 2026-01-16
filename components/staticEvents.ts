@@ -1,29 +1,78 @@
 export const staticEvents = [
+  // 🔴 LIVE WEBSITE EVENT
+  {
+    id: "warroom-live",
+    title: "WAR ROOM",
+    tagline: "Strategy • Innovation • Execution",
+    date: "2026-02-09",
+    time: "Live Now",
+    venue: "IEDC CEV",
+    poster_url: "/posters/warroom.jpeg", // add poster here
+    is_live: true,
+    form_active: false,
+    registration_link: "https://warroom.iedccev.org/",
+    aftermovie_link: "",
+  },
+
+  // 🔽 EXISTING EVENTS (UNCHANGED)
+    {
+    id: "15",
+    title: "EVOLVIA",
+    date: "2025-10-08",
+    time: "",
+    venue: "",
+    poster_url: "/posters/evolvia.png",
+    is_live: false,
+    aftermovie_link: "https://evolvia.iedccev.org/",
+  },
+    {
+    id: "14",
+    title: "FEMMORA",
+    date: "2026-01-07",
+    time: "",
+    venue: "",
+    poster_url: "/posters/femora.jpeg",
+    is_live: false,
+    aftermovie_link: "https://www.instagram.com/reel/DTSvfM1kdGJ/?igsh=ZDA5cnoydGl5dmRs",
+  },
+  
+  {
+    id: "16",
+    title: "CALL FOR PROJECT",
+    date: "2025-10-08",
+    time: "",
+    venue: "",
+    poster_url: "/posters/startup.jpeg",
+    is_live: false,
+    aftermovie_link: "https://www.instagram.com/p/DSebquAEVaN/?igsh=cTdidnE4Zm84YWh5",
+  },
   {
     id: 9,
     title: "Smash",
-    tagline:"Typing Contest",
+    tagline: "Typing Contest",
     date: "05/08/25",
     time: "1-3pm",
     venue: "Asap Room,CEV",
-    poster_url: "",
+    poster_url: "/posters/smash.jpg",
     is_live: false,
     form_active: false,
-    registration_link: "https://www.iedccev.org/smash",
-    aftermovie_link: "",
+    registration_link: "",
+    aftermovie_link:
+      "https://www.instagram.com/p/DNAPc6LStWu/?igsh=NTVxM3FnM2k0NDk5",
   },
   {
     id: 8,
     title: "Beginner’s League",
-    tagline:"9 Colleges. 1 Week",
+    tagline: "9 Colleges. 1 Week",
     date: "04/08/25",
     time: "7pm",
     venue: "Online",
     poster_url: "/posters/beginners.jpg",
     is_live: false,
     form_active: false,
-    registration_link: "https://makemypass.com/event/beginners-league",
-    aftermovie_link: "",
+    registration_link: "",
+    aftermovie_link:
+      "https://www.instagram.com/p/DNPm5ByvJr2/?igsh=MXV5dzZtenFkMHA2OQ==",
   },
   {
     id: 7,
@@ -33,9 +82,9 @@ export const staticEvents = [
     venue: "Mini Auditorium,CEV",
     poster_url: "/posters/Xylem.jpg",
     is_live: false,
-    form_active:false,
-    registration_link: "https://www.iedccev.org/xylem",
-    aftermovie_link: "",
+    form_active: false,
+    registration_link: "",
+    aftermovie_link: "https://www.instagram.com/p/DMo8kYkNKda/?igsh=MWZiNnk0dGk0ZjZxYQ==",
   },
   {
     id: "6",
@@ -45,7 +94,7 @@ export const staticEvents = [
     venue: "ASAP Room,CEV",
     poster_url: "/posters/eceee.jpg",
     is_live: false,
-    registration_link: "https://www.iedccev.org/eceee",
+    registration_link: "",
     aftermovie_link: "https://www.instagram.com/reel/DMvVnufz6bV",
   },
   {
@@ -56,8 +105,8 @@ export const staticEvents = [
     venue: "ASAP Room,CEV",
     poster_url: "/posters/csit.jpg",
     is_live: false,
-    registration_link: "https://www.iedccev.org/reactjs",
-    aftermovie_link: "",
+    registration_link: "",
+    aftermovie_link: "https://www.instagram.com/p/DMNmWkpxrxh/?igsh=cG4yczgzeTNrNzZj",
   },
   {
     id: "1",
@@ -67,7 +116,7 @@ export const staticEvents = [
     venue: "ASAP Room,CEV",
     poster_url: "/posters/civil.jpg",
     is_live: false,
-    registration_link: "https://www.iedccev.org/civil",
+    registration_link: "",
     aftermovie_link: "https://www.instagram.com/reel/DMfeyeJzkd3",
   },
   {
@@ -78,7 +127,8 @@ export const staticEvents = [
     venue: "memes.of.cev Online",
     poster_url: "/posters/meme.jpg",
     is_live: false,
-    aftermovie_link: "https://www.instagram.com/reel/DLIEvfMTv9h/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    aftermovie_link:
+      "https://www.instagram.com/reel/DLIEvfMTv9h/",
   },
   {
     id: "3",
@@ -88,7 +138,8 @@ export const staticEvents = [
     venue: "Discord, Online",
     poster_url: "/posters/gamenight.jpg",
     is_live: false,
-    aftermovie_link: "https://www.instagram.com/stories/highlights/18045461471404768/",
+    aftermovie_link:
+      "https://www.instagram.com/stories/highlights/18045461471404768/",
   },
   {
     id: "4",
@@ -98,7 +149,50 @@ export const staticEvents = [
     venue: "Mini Auditorium, CEV",
     poster_url: "/posters/bootcamp.jpg",
     is_live: false,
-    aftermovie_link: "https://www.instagram.com/reel/DHu7fLvR793/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    aftermovie_link:
+      "https://www.instagram.com/reel/DHu7fLvR793/",
   },
-  
+  {
+    id: "10",
+    title: "USELESS PROJECT",
+    date: "2025-08-24",
+    time: "4:00 PM",
+    venue: "Mini Auditorium, CEV",
+    poster_url: "/posters/usslesss.jpeg",
+    is_live: false,
+    aftermovie_link:
+      "https://www.instagram.com/reel/DNipkhVT7GX/",
+  },
+  {
+    id: "11",
+    title: "FINITE INTELLIGENCE",
+    date: "2025-08-15",
+    time: "",
+    venue: "Mini Auditorium, CEV",
+    poster_url: "/posters/finite (1).jpeg",
+    is_live: false,
+    aftermovie_link: "https://www.instagram.com/p/DNXd8GUvEJL/?igsh=dTk2aTk1dHo3MzB1",
+  },
+  {
+    id: "12",
+    title: "GTL 1.0",
+    date: "2025-09-25",
+    time: "",
+    venue: "",
+    poster_url: "/posters/facua.jpeg",
+    is_live: false,
+    aftermovie_link: "https://www.instagram.com/p/DNixqcwT1p1/?igsh=cjB0eGUzM2l1dnhp",
+  },
+  {
+    id: "13",
+    title: "ONAM AI",
+    date: "2025-08-31",
+    time: "",
+    venue: "online platform",
+    poster_url: "/posters/onam.jpeg",
+    is_live: false,
+    aftermovie_link: "https://www.instagram.com/p/DOF9QHbEdfa/?igsh=bWQwang5M3lqNTAy",
+  },
+
+
 ]

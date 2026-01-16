@@ -132,7 +132,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl sm:text-5xl font-medium text-gray-900 mb-4 flex justify-center items-center"><IdCard className="mr-2 size-8"/>Who Are We</h2>
           <video
-            src="/aboutVideo.mp4"
+            src="/evol.webm"
             autoPlay
             muted
             loop
@@ -143,7 +143,7 @@ export default function HomePage() {
           </p>
           <div className="mt-12">
             <Button variant="outline" size="lg" asChild>
-              <Link href="/">
+              <Link href="https://www.instagram.com/iedc_cev?igsh=YW5lZjBicGs3emYz">
                 View Gallery <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
