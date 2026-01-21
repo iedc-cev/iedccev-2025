@@ -24,33 +24,33 @@ export default function EventsPage() {
   }
 
   return (
-    <div className="pt-12">
+    <div className="pt-16 md:pt-20">
       {/* Hero Section */}
-      <section className="py-4 text-black">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-semibold mb-2">
+      <section className="py-16 md:py-24 text-black bg-gray-50/50">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium mb-6 leading-tight tracking-tight">
             Events That Build Futures.{" "}
-            <span className="text-blue-400">And Memories.</span>
+            <span className="text-[#1A4C96]">And Memories.</span>
           </h1>
         </div>
       </section>
 
       {/* Live Events */}
-      <section className="py-10">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-8">
+      <section className="py-24 bg-white">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl sm:text-5xl font-medium text-gray-900 mb-12 tracking-tight">
             Live Events
           </h2>
 
           {liveEvents.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {liveEvents.map((event) => (
                 <div
                   key={event.id}
-                  className="group rounded-md overflow-hidden border shadow-md hover:shadow-xl transition-all duration-300"
+                  className="group rounded-[2rem] overflow-hidden border border-gray-100 shadow-none hover:shadow-md transition-all duration-500"
                 >
                   {/* Poster */}
-                  <div className="relative h-[420px]">
+                  <div className="relative h-[320px] sm:h-[380px] md:h-[420px]">
                     <Image
                       src={event.poster_url || "/placeholder.svg"}
                       alt={event.title}
@@ -67,37 +67,37 @@ export default function EventsPage() {
                     </Badge>
 
                     {/* Title */}
-                    <div className="absolute bottom-6 left-6 right-6 text-white">
-                      <h3 className="text-2xl font-bold">{event.title}</h3>
+                    <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-white">
+                      <h3 className="text-xl sm:text-2xl font-medium">{event.title}</h3>
                       {event.tagline && (
-                        <p className="text-sm opacity-90">{event.tagline}</p>
+                        <p className="text-xs sm:text-sm opacity-90 mt-1">{event.tagline}</p>
                       )}
                     </div>
                   </div>
 
                   {/* Details */}
-                  <CardContent className="p-6 space-y-3">
-                    <div className="flex items-center text-gray-600">
-                      <Calendar className="h-4 w-4 mr-2" />
+                  <CardContent className="p-4 sm:p-6 space-y-3">
+                    <div className="flex items-center text-sm sm:text-base text-gray-600">
+                      <Calendar className="h-4 w-4 mr-2 flex-shrink-0" />
                       {formatDate(event.date)}
                     </div>
 
                     {event.time && (
-                      <div className="flex items-center text-gray-600">
-                        <Clock className="h-4 w-4 mr-2" />
+                      <div className="flex items-center text-sm sm:text-base text-gray-600">
+                        <Clock className="h-4 w-4 mr-2 flex-shrink-0" />
                         {event.time}
                       </div>
                     )}
 
                     {event.venue && (
-                      <div className="flex items-center text-gray-600">
-                        <MapPin className="h-4 w-4 mr-2" />
+                      <div className="flex items-center text-sm sm:text-base text-gray-600">
+                        <MapPin className="h-4 w-4 mr-2 flex-shrink-0" />
                         {event.venue}
                       </div>
                     )}
 
                     <Button
-                      className="w-full bg-gradient-to-r from-blue-700 to-indigo-700 hover:opacity-90"
+                      className="w-full bg-[#1A4C96] hover:bg-[#1A4C96]/90 mt-2 text-sm sm:text-base"
                       asChild
                     >
                       <a
@@ -114,10 +114,10 @@ export default function EventsPage() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-10">
-              <Calendar className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">No Live Events</h3>
-              <p className="text-gray-600">
+            <div className="text-center py-16">
+              <Calendar className="h-16 w-16 text-gray-400 mx-auto mb-4" />
+              <h3 className="text-2xl font-medium mb-3 text-gray-900">No Live Events</h3>
+              <p className="text-xl text-gray-600">
                 Stay tuned for upcoming events!
               </p>
             </div>
@@ -126,42 +126,42 @@ export default function EventsPage() {
       </section>
 
       {/* Past Events */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-12">
+      <section className="py-24 bg-gray-50/50">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl sm:text-5xl font-medium text-gray-900 mb-12 tracking-tight">
             Past Events
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {pastEvents.map((event) => (
               <div
                 key={event.id}
-                className="rounded-sm shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                className="rounded-[2rem] shadow-none hover:shadow-md overflow-hidden transition-all duration-500 border border-gray-100 bg-white group"
               >
-                <div className="aspect-video relative">
+                <div className="aspect-video relative overflow-hidden">
                   <Image
                     src={event.poster_url || "/placeholder.svg"}
                     alt={event.title}
                     fill
-                    className="object-cover"
+                    className="object-cover hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-black/20" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 </div>
 
-                <CardContent className="p-6">
-                  <h3 className="text-md md:text-xl font-medium mb-3">
+                <CardContent className="p-4 sm:p-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-medium mb-3 line-clamp-2 group-hover:text-[#1A4C96] transition-colors">
                     {event.title}
                   </h3>
 
                   <div className="flex items-center text-gray-600 mb-4">
-                    <Calendar className="h-4 w-4 mr-2" />
-                    <span className="text-sm">
+                    <Calendar className="h-4 w-4 mr-2 flex-shrink-0" />
+                    <span className="text-xs sm:text-sm">
                       {formatDate(event.date)}
                     </span>
                   </div>
 
                   {event.aftermovie_link ? (
-                    <Button variant="outline" className="w-full" asChild>
+                    <Button variant="outline" className="w-full text-xs sm:text-sm border-[#1A4C96] text-[#1A4C96] hover:bg-[#1A4C96] hover:text-white" asChild>
                       <a
                         href={event.aftermovie_link}
                         target="_blank"
@@ -180,13 +180,16 @@ export default function EventsPage() {
             ))}
           </div>
 
-          <div className="flex justify-center mt-8">
-            <Link
-              href="https://www.instagram.com/iedc_cev"
-              className="bg-sky-900 px-6 py-2 rounded-sm text-white"
+          <div className="flex justify-center mt-12">
+            <Button
+              asChild
+              className="bg-[#1A4C96] hover:bg-[#1A4C96]/90 px-8 py-6 text-lg rounded-xl shadow-xl shadow-[#1A4C96]/20"
             >
-              More
-            </Link>
+              <Link href="https://www.instagram.com/iedc_cev" target="_blank" rel="noopener noreferrer">
+                View More Events
+                <ExternalLink className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

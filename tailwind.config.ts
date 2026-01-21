@@ -20,6 +20,7 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
+        raleway: ["var(--font-raleway)"],
         montserrat: ['Montserrat', 'sans-serif'],
         antonio: ['Antonio', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
@@ -62,6 +63,9 @@ const config: Config = {
           blue: "#1A4C96",
           black: "#000000",
         },
+      },
+      maxWidth: {
+        "8xl": "88rem",
       },
       borderRadius: {
         lg: "var(--radius)",

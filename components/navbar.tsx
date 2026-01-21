@@ -15,8 +15,8 @@ export default function Navbar() {
     setIsOpen(false)
   }, [pathname])
 
-  // Allowed routes (FIXED)
-  const allowedRoutes = ["/", "/events", "/achievement"]
+  // Allowed routes - Show on all common routes
+  const allowedRoutes = ["/", "/events", "/achievement", "/gallery", "/media", "/expo", "/join"]
   if (!allowedRoutes.includes(pathname)) return null
 
   const linkClass = (path: string) =>
@@ -28,7 +28,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 py-2">
         <div className="flex justify-between items-center h-16">
 
           {/* Logo */}
