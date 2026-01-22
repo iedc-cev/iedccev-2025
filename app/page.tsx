@@ -207,10 +207,6 @@ export default function HomePage() {
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-12 max-w-[1400px] mx-auto text-center md:text-left">
           <div className="flex flex-col md:flex-row items-center md:items-end justify-between gap-12">
             <div className="max-w-3xl">
-              <div className="hero-text mb-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-black/5 bg-white/50 backdrop-blur-sm text-xs font-bold uppercase tracking-[0.2em] text-[#1A4C96]">
-                <div className="w-2 h-2 rounded-full bg-[#1A4C96] animate-pulse" />
-                Empowering the next generation
-              </div>
               
               <h1 className="hero-text text-6xl sm:text-7xl lg:text-[100px] font-bold leading-[0.95] tracking-tight text-gray-900 mb-8">
                 Think Big.<br />
