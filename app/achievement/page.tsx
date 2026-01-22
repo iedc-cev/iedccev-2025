@@ -153,8 +153,8 @@ export default function AchievementPage() {
               "IEDC Room Automation System",
               "Smart Canteen",
               "NSS Blood Bank System",
-              "Where Is My College Bus App",
-            ].map((item) => (
+             
+            ].map((item, index) => (
               <div
                 key={item}
                 className="rounded-[2rem] border border-gray-100 p-8 bg-white shadow-none hover:shadow-md transition-shadow duration-500 group infra-card"
@@ -176,8 +176,8 @@ export default function AchievementPage() {
               "EVOLVIA – IEDC Flagship Event",
               "CONCLAVE",
               "Smart India Hackathon 2024",
-              "SSCS Arduino Contest 2025",
-            ].map((event) => (
+            
+            ].map((event, index) => (
               <div
                 key={event}
                 className="rounded-[2rem] bg-white p-8 shadow-none hover:shadow-md transition-shadow duration-500 border border-gray-100 group event-card"
@@ -197,7 +197,7 @@ export default function AchievementPage() {
           <div className="grid md:grid-cols-2 gap-6">
             {[
               "Block Innovation Cluster – Wildlife Mitigation Project",
-              "PMKSY App for Panchayath Development",
+             
               "TOWN Vibes – Exploring IEDC Town",
             ].map((project) => (
               <div
