@@ -75,6 +75,15 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
   }
+
+  .vertical-text {
+    writing-mode: vertical-rl;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1px rgba(0,0,0,0.1);
+    color: transparent;
+  }
 }
 
 /* Custom scrollbar */
@@ -104,9 +113,13 @@
   background: #144080;
 }
 
-/* Smooth animations */
-* {
-  transition: all 0.2s ease-in-out;
+/* Award-winning website enhancements */
+html {
+  scroll-behavior: auto; /* Let Lenis handle smooth scroll */
+}
+
+body {
+  overscroll-behavior: none;
 }
 
 /* Hero section gradient animation */
@@ -126,4 +139,36 @@
   background: linear-gradient(-45deg, #1a4c96, #2563eb, #3b82f6, #1a4c96);
   background-size: 400% 400%;
   animation: gradient-shift 15s ease infinite;
+}
+
+/* Enhanced typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* Remove default smooth scroll class hiding */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Enhanced hover states */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Optimized for 60fps animations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, video {
+  will-change: transform;
 }

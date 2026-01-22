@@ -1,21 +1,89 @@
 "use client"
 
+import { useEffect, useRef } from "react"
 import { CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Trophy, Rocket, Award, Cpu, Users } from "lucide-react"
-import Footer from "@/components/footer"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function AchievementPage() {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Hero Text Reveal
+      const heroLines = gsap.utils.toArray(".hero-line-inner")
+      gsap.from(heroLines, {
+        yPercent: 100,
+        skewY: 3,
+        duration: 1.5,
+        stagger: 0.1,
+        ease: "power4.out",
+        delay: 0.1,
+      })
+
+      // Section Title Reveal
+      const sectionTitles = gsap.utils.toArray(".section-title-inner")
+      sectionTitles.forEach((title: any) => {
+        gsap.from(title, {
+          scrollTrigger: {
+            trigger: title,
+            start: "top 95%",
+            toggleActions: "play none none none",
+          },
+          yPercent: 100,
+          skewY: 2,
+          duration: 1.2,
+          ease: "power4.out",
+        })
+      })
+
+      // Staggered Cards
+      const cardSections = [".startup-card", ".award-card", ".infra-card", ".event-card", ".project-card"]
+      cardSections.forEach(selector => {
+        const cards = gsap.utils.toArray(selector)
+        if (cards.length > 0) {
+          gsap.from(cards, {
+            scrollTrigger: {
+              trigger: cards[0] as Element,
+              start: "top 90%",
+              once: true,
+            },
+            y: 30,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power2.out",
+          })
+        }
+      })
+
+      // Refresh ScrollTrigger to ensure correct positions
+      setTimeout(() => {
+        ScrollTrigger.refresh()
+      }, 500)
+    }, containerRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <div className="pt-14">
+    <div className="pt-14" ref={containerRef}>
       
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden bg-gray-50/50">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-medium mb-6 text-gray-900 tracking-tight">
-            IEDC Achievements
-            <span className="block text-[#1A4C96] mt-2">
-              Building Innovation with Impact
+          <h1 className="text-4xl md:text-6xl font-medium mb-6 text-gray-900 tracking-tight">
+            <span className="block overflow-hidden">
+              <span className="hero-line-inner block">IEDC Achievements</span>
+            </span>
+            <span className="block overflow-hidden">
+              <span className="hero-line-inner block text-[#1A4C96] mt-2">
+                Building Innovation with Impact
+              </span>
             </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -37,10 +105,10 @@ export default function AchievementPage() {
               ["TXTUDIO", "IT Solutions Start-up"],
               ["Made Webs", "IT Solutions Start-up"],
               ["Jumpspace Studio", "Architectural Studio"],
-            ].map(([name, desc], index) => (
+            ].map(([name, desc]) => (
               <div
-                key={index}
-                className="rounded-[2rem] border border-gray-100 bg-white shadow-none hover:shadow-md transition-all duration-500 group"
+                key={name}
+                className="rounded-[2rem] border border-gray-100 bg-white shadow-none hover:shadow-md transition-shadow duration-500 group startup-card"
               >
                 <CardContent className="p-8">
                   <Badge className="mb-4 bg-[#1A4C96] hover:bg-[#1A4C96]/90">Incubated</Badge>
@@ -62,10 +130,10 @@ export default function AchievementPage() {
             {[
               "Best Faculty Mentorship Award – STRIDE Makeathon 2025 (KDISC)",
               "Best Facilitator Award – District Level, YIP (Young Innovators Programme)",
-            ].map((item, index) => (
+            ].map((item) => (
               <div
-                key={index}
-                className="rounded-[2rem] bg-white p-8 shadow-none hover:shadow-md transition-all duration-500 border border-gray-100 group"
+                key={item}
+                className="rounded-[2rem] bg-white p-8 shadow-none hover:shadow-md transition-shadow duration-500 border border-gray-100 group award-card"
               >
                 <p className="text-lg font-medium text-gray-900 leading-relaxed group-hover:text-[#1A4C96] transition-colors">{item}</p>
               </div>
@@ -86,10 +154,10 @@ export default function AchievementPage() {
               "Smart Canteen",
               "NSS Blood Bank System",
               "Where Is My College Bus App",
-            ].map((item, index) => (
+            ].map((item) => (
               <div
-                key={index}
-                className="rounded-[2rem] border border-gray-100 p-8 bg-white shadow-none hover:shadow-md transition-all duration-500 group"
+                key={item}
+                className="rounded-[2rem] border border-gray-100 p-8 bg-white shadow-none hover:shadow-md transition-shadow duration-500 group infra-card"
               >
                 <p className="font-medium text-gray-900 leading-relaxed group-hover:text-[#1A4C96] transition-colors">{item}</p>
               </div>
@@ -109,10 +177,10 @@ export default function AchievementPage() {
               "CONCLAVE",
               "Smart India Hackathon 2024",
               "SSCS Arduino Contest 2025",
-            ].map((event, index) => (
+            ].map((event) => (
               <div
-                key={index}
-                className="rounded-[2rem] bg-white p-8 shadow-none hover:shadow-md transition-all duration-500 border border-gray-100 group"
+                key={event}
+                className="rounded-[2rem] bg-white p-8 shadow-none hover:shadow-md transition-shadow duration-500 border border-gray-100 group event-card"
               >
                 <h3 className="font-medium text-gray-900 leading-relaxed group-hover:text-[#1A4C96] transition-colors">{event}</h3>
               </div>
@@ -131,10 +199,10 @@ export default function AchievementPage() {
               "Block Innovation Cluster – Wildlife Mitigation Project",
               "PMKSY App for Panchayath Development",
               "TOWN Vibes – Exploring IEDC Town",
-            ].map((project, index) => (
+            ].map((project) => (
               <div
-                key={index}
-                className="rounded-[2rem] border border-gray-100 bg-white p-8 shadow-none hover:shadow-md transition-all duration-500 group"
+                key={project}
+                className="rounded-[2rem] border border-gray-100 bg-white p-8 shadow-none hover:shadow-md transition-shadow duration-500 group project-card"
               >
                 <p className="font-medium text-gray-900 leading-relaxed group-hover:text-[#1A4C96] transition-colors">{project}</p>
               </div>
@@ -147,7 +215,9 @@ export default function AchievementPage() {
       <section className="py-24 bg-gray-50/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl sm:text-5xl font-medium mb-6 text-gray-900 tracking-tight">
-            National & State-Level Exposure
+            <span className="block overflow-hidden">
+              <span className="section-title-inner block">National & State-Level Exposure</span>
+            </span>
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed">
             Participation in IEDC Summit, KSUM Innovation Tour, and Kerala
@@ -164,14 +234,18 @@ export default function AchievementPage() {
 function SectionTitle({
   icon,
   title,
-}: {
+}: Readonly<{
   icon: React.ReactNode
   title: string
-}) {
+}>) {
   return (
     <div className="flex items-center gap-4 mb-12">
       <div className="text-[#1A4C96] size-8">{icon}</div>
-      <h2 className="text-4xl sm:text-5xl font-medium text-gray-900 tracking-tight">{title}</h2>
+      <h2 className="text-4xl sm:text-5xl font-medium text-gray-900 tracking-tight">
+        <span className="block overflow-hidden">
+          <span className="section-title-inner block">{title}</span>
+        </span>
+      </h2>
       <div className="flex-1 h-px bg-gray-200 ml-6" />
     </div>
   )

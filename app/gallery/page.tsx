@@ -98,29 +98,39 @@ export default function GalleryPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filteredImages.length > 0 ? (
-            <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {filteredImages.map((image) => (
-                <Card
+                <button
                   key={image.id}
-                  className="break-inside-avoid overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
+                  className="group relative rounded-[2rem] overflow-hidden aspect-square cursor-pointer w-full text-left"
                   onClick={() => setSelectedImage(image)}
                 >
-                  <div className="relative">
-                    <Image
-                      src={image.image_url || "/placeholder.svg"}
-                      alt={image.title}
-                      width={400}
-                      height={300}
-                      className="object-cover w-full h-auto"
-                    />
+                  <Image
+                    src={image.image_url || "/placeholder.svg"}
+                    alt={image.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
+                  />
+                  
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  {/* Badges/Info */}
+                  <div className="absolute top-4 left-4">
                     {image.event_name && (
-                      <Badge className="absolute top-2 left-2 bg-[#1A4C96]">{image.event_name}</Badge>
+                      <Badge className="bg-white/10 backdrop-blur-md text-white border-white/20 text-[10px] font-bold tracking-widest uppercase">
+                        {image.event_name}
+                      </Badge>
                     )}
                   </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold text-gray-900">{image.title}</h3>
+
+                  {/* Content Overlay */}
+                  <div className="absolute inset-x-0 bottom-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                    <h3 className="text-lg font-medium text-white leading-tight">
+                      {image.title}
+                    </h3>
                   </div>
-                </Card>
+                </button>
               ))}
             </div>
           ) : (

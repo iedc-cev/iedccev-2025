@@ -88,41 +88,54 @@ export default function MediaPage() {
           {filteredItems.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredItems.map((item) => (
-                <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow group">
-                  <div className="aspect-video relative">
-                    <Image
-                      src={item.thumbnail_url || "/placeholder.svg"}
-                      alt={item.title}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <Button size="lg" className="bg-white/20 hover:bg-white/30 text-white border-white/50" asChild>
-                        <a href={item.video_url} target="_blank" rel="noopener noreferrer">
-                          <Play className="h-6 w-6 mr-2" />
-                          Watch
-                        </a>
-                      </Button>
-                    </div>
-                    <Badge className="absolute top-4 left-4 bg-[#1A4C96]">{item.series}</Badge>
-                    {item.duration && (
-                      <div className="absolute bottom-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm flex items-center">
-                        <Clock className="h-3 w-3 mr-1" />
-                        {item.duration}
+                <div 
+                  key={item.id} 
+                  className="group relative rounded-[2.5rem] overflow-hidden aspect-video cursor-pointer"
+                >
+                  <Image
+                    src={item.thumbnail_url || "/placeholder.svg"}
+                    alt={item.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
+                  />
+                  
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  {/* Content */}
+                  <div className="absolute inset-x-0 bottom-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                    <div className="flex flex-col gap-3">
+                      <div className="flex items-center gap-3">
+                        <Badge className="bg-white/10 backdrop-blur-md text-white border-white/20 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">
+                          {item.series}
+                        </Badge>
+                        <span className="text-[10px] text-white/60 font-medium tracking-widest flex items-center gap-1.5 uppercase">
+                          <Clock className="h-3 w-3" /> {item.duration}
+                        </span>
                       </div>
-                    )}
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                    <p className="text-gray-600 mb-4 line-clamp-2">{item.description}</p>
-                    <Button variant="outline" className="w-full bg-transparent" asChild>
-                      <a href={item.video_url} target="_blank" rel="noopener noreferrer">
-                        Watch Full Video
-                        <ExternalLink className="ml-2 h-4 w-4" />
+                      
+                      <h3 className="text-2xl font-medium text-white leading-tight">
+                        {item.title}
+                      </h3>
+                      
+                      <p className="text-white/60 text-sm font-light line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                        {item.description}
+                      </p>
+
+                      <a 
+                        href={item.video_url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="mt-2 inline-flex items-center gap-2 text-white font-medium text-xs tracking-[0.2em] transform -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 delay-200"
+                      >
+                        <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black">
+                          <Play className="h-4 w-4 fill-current" />
+                        </div>
+                        WATCH NOW
                       </a>
-                    </Button>
-                  </CardContent>
-                </Card>
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           ) : (
