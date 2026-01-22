@@ -175,7 +175,6 @@ export default function AchievementPage() {
             {[
               "EVOLVIA – IEDC Flagship Event",
               "CONCLAVE",
-              "Smart India Hackathon 2024",
             
             ].map((event, index) => (
               <div

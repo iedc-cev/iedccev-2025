@@ -139,22 +139,22 @@ export default function Navbar() {
 
       {/* Full-screen Mobile Menu (Awwwards Style) */}
       <div 
-        className={`fixed inset-0 bg-white z-[110] transition-all duration-700 ease-[0.85,0,0.15,1] ${
+        className={`fixed inset-0 bg-white z-[110] transition-all duration-700 ease-[0.85,0,0.15,1] overflow-y-auto ${
           isOpen ? "translate-y-0" : "translate-y-full"
         }`}
       >
-        <div className="h-full flex flex-col justify-center px-10 md:px-20 relative">
+        <div className="min-h-full flex flex-col justify-between py-20 px-8 md:px-20 relative">
           {/* Close Button Inside Menu */}
           <button 
             onClick={() => setIsOpen(false)}
-            className="absolute top-10 right-10 w-16 h-16 border border-gray-100 rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors"
+            className="absolute top-6 right-6 md:top-10 md:right-10 w-12 h-12 md:w-16 md:h-16 border border-gray-100 rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors"
           >
-            <X className="h-8 w-8" />
+            <X className="h-6 w-6 md:h-8 md:w-8" />
           </button>
 
-          <div className="space-y-8">
-            <p className="text-[#1A4C96] text-sm font-bold tracking-[0.3em] uppercase">Navigation</p>
-            <div className="flex flex-col space-y-4">
+          <div className="space-y-12 mt-10 md:mt-0">
+            <p className="text-[#1A4C96] text-xs md:text-sm font-bold tracking-[0.3em] uppercase">Navigation</p>
+            <div className="flex flex-col space-y-6 md:space-y-4">
               {navLinks.map((link, i) => (
                 <Link 
                   key={link.name}
@@ -162,8 +162,8 @@ export default function Navbar() {
                   className="group flex items-center"
                   onClick={() => setIsOpen(false)}
                 >
-                  <span className="text-gray-300 text-2xl font-light mr-6 font-montserrat">0{i + 1}</span>
-                  <span className="text-5xl md:text-7xl font-medium tracking-tight hover:text-[#1A4C96] transform group-hover:translate-x-4 transition-all duration-500">
+                  <span className="text-gray-300 text-lg md:text-2xl font-light mr-4 md:mr-6 font-montserrat">0{i + 1}</span>
+                  <span className="text-4xl md:text-7xl font-medium tracking-tight hover:text-[#1A4C96] transform group-hover:translate-x-4 transition-all duration-500">
                     {link.name}
                   </span>
                 </Link>
@@ -171,10 +171,10 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="absolute bottom-20 left-10 md:left-20 right-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
+          <div className="mt-20 md:mt-0 flex flex-col md:flex-row justify-between items-start md:items-end gap-12 md:gap-10 pb-10">
             <div className="space-y-4">
-              <p className="text-gray-400 text-xs font-bold tracking-widest uppercase text-left">Connectivity</p>
-              <div className="flex gap-8 text-xl">
+              <p className="text-gray-400 text-[10px] md:text-xs font-bold tracking-widest uppercase text-left">Connectivity</p>
+              <div className="flex gap-8 text-lg md:text-xl">
                 <a href="https://instagram.com/iedc_cev" target="_blank" rel="noopener noreferrer" className="hover:text-[#1A4C96] transition-colors">Instagram</a>
                 <a href="https://linkedin.com/company/iedc-cev" target="_blank" rel="noopener noreferrer" className="hover:text-[#1A4C96] transition-colors">LinkedIn</a>
               </div>
@@ -185,9 +185,9 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
               className="group flex flex-col text-left"
             >
-              <p className="text-gray-400 text-xs font-bold tracking-widest uppercase mb-4">Start your journey</p>
-              <span className="text-4xl md:text-5xl font-medium flex items-center gap-6 group-hover:text-[#1A4C96] transition-colors">
-                Join our IEDC Hub <ArrowRight className="h-10 w-10 group-hover:translate-x-4 transition-transform" />
+              <p className="text-gray-400 text-[10px] md:text-xs font-bold tracking-widest uppercase mb-4">Start your journey</p>
+              <span className="text-3xl md:text-5xl font-medium flex items-center gap-4 md:gap-6 group-hover:text-[#1A4C96] transition-colors">
+                Join our IEDC Hub <ArrowRight className="h-8 w-8 md:h-10 md:w-10 group-hover:translate-x-4 transition-transform" />
               </span>
             </Link>
           </div>
