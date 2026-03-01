@@ -40,6 +40,7 @@ export default function ExecomPage() {
     department: '',
     semester: '',
     position: '',
+    secondaryPosition: '',
     experience: '',
     candidateReason: '',
     queries: '',
@@ -95,9 +96,12 @@ export default function ExecomPage() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             name: formData.name,
+            email: formData.email,
             phoneNumber: formData.mobileNo,
             department: formData.department,
+            semester: formData.semester,
             position: formData.position,
+            secondaryPosition: formData.secondaryPosition,
             volunteeringExperience: formData.experience,
             candidateReason: formData.candidateReason,
             queries: formData.queries,
@@ -189,7 +193,7 @@ export default function ExecomPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="form-reveal group">
                 <label htmlFor="name" className="block text-xs font-semibold uppercase tracking-widest text-gray-400 group-focus-within:text-[#1A4C96] transition-colors mb-2">
-                  Full Name
+                  Full Name *
                 </label>
                 <input
                   type="text"
@@ -205,7 +209,7 @@ export default function ExecomPage() {
 
               <div className="form-reveal group">
                 <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-widest text-gray-400 group-focus-within:text-[#1A4C96] transition-colors mb-2">
-                  Email Address
+                  Email Address *
                 </label>
                 <input
                   type="email"
@@ -223,7 +227,7 @@ export default function ExecomPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="form-reveal group">
                 <label htmlFor="mobileNo" className="block text-xs font-semibold uppercase tracking-widest text-gray-400 group-focus-within:text-[#1A4C96] transition-colors mb-2">
-                  Phone Number
+                  Phone Number *
                 </label>
                 <input
                   type="tel"
@@ -241,7 +245,7 @@ export default function ExecomPage() {
 
               <div className="form-reveal group">
                 <label htmlFor="department" className="block text-xs font-semibold uppercase tracking-widest text-gray-400 group-focus-within:text-[#1A4C96] transition-colors mb-2">
-                  Department
+                  Department *
                 </label>
                 <div className="relative">
                   <select
@@ -264,7 +268,7 @@ export default function ExecomPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="form-reveal group">
                 <label htmlFor="semester" className="block text-xs font-semibold uppercase tracking-widest text-gray-400 group-focus-within:text-[#1A4C96] transition-colors mb-2">
-                  Semester
+                  Semester *
                 </label>
                 <div className="relative">
                   <select
@@ -323,6 +327,29 @@ export default function ExecomPage() {
                     className="w-full bg-transparent border-b-2 border-gray-200 focus:border-[#1A4C96] outline-none py-3 text-lg transition-all appearance-none text-gray-900 cursor-pointer"
                   >
                     <option value="" disabled className="text-gray-400">Select preferred position</option>
+                    {positions.map((pos) => (
+                      <option key={pos} value={pos} className="text-gray-900">{pos}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <div className="form-reveal group">
+                <label htmlFor="secondaryPosition" className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-gray-400 group-focus-within:text-[#1A4C96] transition-colors mb-2">
+                  Secondary Position
+                  <button type="button" onClick={() => setShowPositionInfo(true)} className="text-red-400 hover:text-red-600 transition-colors" aria-label="View position details">
+                    <Info className="w-5 h-5" />
+                  </button>
+                </label>
+                <div className="relative">
+                  <select
+                    name="secondaryPosition"
+                    id="secondaryPosition"
+                    value={formData.secondaryPosition}
+                    onChange={handleChange}
+                    className="w-full bg-transparent border-b-2 border-gray-200 focus:border-[#1A4C96] outline-none py-3 text-lg transition-all appearance-none text-gray-900 cursor-pointer"
+                  >
+                    <option value="" className="text-gray-400">Select secondary position (optional)</option>
                     {positions.map((pos) => (
                       <option key={pos} value={pos} className="text-gray-900">{pos}</option>
                     ))}
