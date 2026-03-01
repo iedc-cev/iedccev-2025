@@ -101,8 +101,6 @@ export default function AchievementPage() {
             {[
               ["Finite Intelligence", "AI and Robotics based start-up"],
               ["Cybroque Technologies", "IT Solutions Start-up"],
-              ["Lofritex", "IT Solutions Start-up"],
-              ["TXTUDIO", "IT Solutions Start-up"],
               ["Made Webs", "IT Solutions Start-up"],
               ["Jumpspace Studio", "Architectural Studio"],
             ].map(([name, desc]) => (

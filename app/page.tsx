@@ -224,7 +224,7 @@ export default function HomePage() {
                 >
                   <span className="absolute inset-0 w-full h-full transition-all duration-500 ease-out bg-[#1A4C96] -translate-x-full group-hover:translate-x-0" />
                   <span className="relative flex items-center gap-3 text-sm tracking-widest uppercase">
-                    Join the Hub <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
+                    Join the Hub
                   </span>
                 </Link>
                 
@@ -233,7 +233,7 @@ export default function HomePage() {
                   className="group inline-flex items-center justify-center px-10 py-5 font-bold rounded-full border-2 border-gray-200 hover:border-[#1A4C96] transition-all duration-500 text-gray-900"
                 >
                   <span className="text-sm tracking-widest uppercase flex items-center gap-3">
-                    View Events <Sparkles className="h-5 w-5 group-hover:rotate-12 transition-transform text-[#1A4C96]" />
+                    View Events
                   </span>
                 </Link>
               </div>

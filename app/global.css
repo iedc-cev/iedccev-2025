@@ -115,7 +115,7 @@
 
 /* Award-winning website enhancements */
 html {
-  scroll-behavior: auto; /* Let Lenis handle smooth scroll */
+  scroll-behavior: smooth;
 }
 
 body {

@@ -140,7 +140,7 @@ export default function Navbar() {
       {/* Full-screen Mobile Menu (Awwwards Style) */}
       <div 
         className={`fixed inset-0 bg-white z-[110] transition-all duration-700 ease-[0.85,0,0.15,1] overflow-y-auto ${
-          isOpen ? "translate-y-0" : "translate-y-full"
+          isOpen ? "translate-y-0 pointer-events-auto" : "translate-y-full pointer-events-none"
         }`}
       >
         <div className="min-h-full flex flex-col justify-between py-20 px-8 md:px-20 relative">
