@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { Sparkles, CheckCircle2, Loader2, Send } from 'lucide-react';
+import { Sparkles, CheckCircle2, Loader2, Send, Info, X } from 'lucide-react';
 import gsap from 'gsap';
 const WHATSAPP_GROUP_LINK = process.env.NEXT_PUBLIC_WHATSAPP_EXECOM_LINK!;
 
@@ -20,6 +20,18 @@ const positions = [
   'Technology Lead'
 ];
 
+const positionDetails: Record<string, string> = {
+  'Student Lead': 'Represent the student body and voice concerns to the IEDC.',
+  'Quality & Operation Lead': 'Ensure the smooth functioning of day-to-day operations.',
+  'Finance Lead': "Manage the organization's budget and financial resources.",
+  'Creative & Innovation Lead': 'Drive creative initiatives and innovative projects.',
+  'Branding & Marketing Lead': 'Develop and execute marketing strategies to promote the organization.',
+  'Community Lead': 'Build and nurture a sense of community within the organization.',
+  'IPR & Research Lead': 'Oversee intellectual property matters and research activities.',
+  'Women Entrepreneurship Lead': 'Lead initiatives that empower women in innovation, entrepreneurship, and leadership.',
+  'Technology Lead': 'Oversee the technological infrastructure of the organization.',
+};
+
 export default function ExecomPage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -36,6 +48,7 @@ export default function ExecomPage() {
   const [status, setStatus] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [showPositionInfo, setShowPositionInfo] = useState(false);
 
   const formRef = useRef<HTMLDivElement>(null);
 
@@ -271,10 +284,34 @@ export default function ExecomPage() {
               </div>
             </div>
 
+            {showPositionInfo && (
+              <div className="fixed inset-0 z-50 bg-white overflow-y-auto">
+                <div className="min-h-full p-6 md:p-12 lg:p-20 max-w-2xl mx-auto">
+                  <div className="flex items-center justify-between mb-8">
+                    <h3 className="text-3xl font-semibold tracking-tight text-gray-900">Position Descriptions</h3>
+                    <button onClick={() => setShowPositionInfo(false)} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors">
+                      <X className="w-5 h-5 text-gray-500" />
+                    </button>
+                  </div>
+                  <div className="space-y-6">
+                    {Object.entries(positionDetails).map(([title, desc]) => (
+                      <div key={title} className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
+                        <p className="text-base font-semibold text-[#1A4C96] mb-1">{title}</p>
+                        <p className="text-gray-500 leading-relaxed">{desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="form-reveal group">
-                <label htmlFor="position" className="block text-xs font-semibold uppercase tracking-widest text-gray-400 group-focus-within:text-[#1A4C96] transition-colors mb-2">
+                <label htmlFor="position" className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-gray-400 group-focus-within:text-[#1A4C96] transition-colors mb-2">
                   Position *
+                  <button type="button" onClick={() => setShowPositionInfo(true)} className="text-red-400 hover:text-red-600 transition-colors" aria-label="View position details">
+                    <Info className="w-5 h-5" />
+                  </button>
                 </label>
                 <div className="relative">
                   <select
